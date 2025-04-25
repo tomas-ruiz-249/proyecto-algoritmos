@@ -1,14 +1,12 @@
 #include <iostream>
 #include <string>
-#include "hashmap.h"
+#include <tuple>
+#include "grafo.h"
 
 using namespace std;
 
 int main(){
-    HashMap<string, int> h;
-    for(int i = 0; i < 100; i++){
-        h.insert(to_string(i * 2), i);
-        h.print();
-    }
+    Grafo g;
+    g.print();
     return 0;
 }

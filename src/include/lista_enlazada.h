@@ -74,15 +74,13 @@ public:
 
     string to_string(){
         string str;
-        str += "[HEAD]";
         NodoLista<T>* current = head;
         while(current != nullptr){
-            str += "(";
-            str += current->getData()->to_string();
-            str +=  ")--->\n";
+            str += current->getData().to_string();
+            if(current->getNext())
+                str +=  "--->";
             current = current->getNext();
         }
-        str += "NULL\n";
         return str;
     }
 
@@ -268,6 +266,15 @@ public:
         else{
             quickSort(0, size - 1, ascending);
         }
+    }
+
+    bool operator==(const ListaEnlazada<T>& l){
+        for(int i = 0; i < size; i++){
+            if(get(i) != l.get(i)){
+                return false;
+            }
+        }
+        return true;
     }
 
 private:    

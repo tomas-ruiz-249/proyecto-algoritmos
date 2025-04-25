@@ -28,6 +28,10 @@ struct Pair{
     bool operator== (Pair<K,V>& p){
         return key == p.key and value == p.value;
     }
+
+    bool operator!= (Pair<K,V>& p){
+        return key != p.key and value != p.value;
+    }
 };
 
 template<typename K, typename V>
@@ -62,16 +66,43 @@ public:
         return false;
     }
 
+    bool remove(K key){
+        int hashIndex = hash(key);
+        int index;
+        int i = 0;
+        do{
+            index = (hashIndex + i * i) % table.getCapacity();
+            if(table[index].empty){
+                return false;
+            }
+            if(table[index].key == key){
+                table[index] = Pair<K,V>();
+                table[index].empty = true;
+                size--;
+                return true;
+            }
+            i++;
+        }
+        while(i < table.getCapacity());
+        return false;
+    }
+
+    V& operator[](const K& key){
+        int hashIndex = hash(key);
+        int index;
+        int i = 0;
+        do{
+            index = (hashIndex + i * i) % table.getCapacity();
+            i++;
+        }
+        while(!table[index].empty && table[index].key == key);
+    }
+
     void print(){
         cout << "---HASHMAP----\n";
         for(int i = 0; i < table.getCapacity(); i++){
-            if (table[i].empty){
-                cout << i << ": ";
-                cout << "(empty)\n";
-            }
-            else{
-                cout << i << ": ";
-                cout << "( " << table[i].key << ", " << table[i].value << " )\n";
+            if (!table[i].empty){
+                cout << "map[" << table[i].key << "]: " << table[i].value.to_string() << "\n";
             }
         }
         cout << "--------------\n";
@@ -86,7 +117,7 @@ public:
             str = std::to_string(key);
         }
         else{
-            str = key.str();
+            str = key.to_string();
         }
         unsigned int hashVal = 0;
         for (char ch : str) {
@@ -94,6 +125,20 @@ public:
         }
         return hashVal % table.getCapacity();
     }
+
+    class Iterator {
+    private:
+        Pair<K,V>* ptr;
+    public:
+        Iterator(Pair<K,V>* p) : ptr(p) {}
+        
+        Pair<K,V>& operator*() const { return *ptr; }
+        Iterator& operator++() { ++ptr; return *this; }
+        bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
+    };
+    
+    Iterator begin() { return Iterator(&table[0]); }
+    Iterator end()   { return Iterator(&table[table.getCapacity()]); }
 private:
     Vector<Pair<K,V>> table;
     double loadFactor;

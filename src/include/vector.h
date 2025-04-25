@@ -75,12 +75,18 @@ class Vector{
             }
             return dato;
         }
+
+        T& at(int index){
+            if(index >= size)
+                throw std::out_of_range("Indice fuera del rango.");
+            return arr[index];
+        }
         
         T& operator[](int index){
             return arr[index];
         }
 
-        string str(){
+        string to_string(){
             string str;
             for(int i = 0; i < capacity; i++){
                 str += std::to_string(arr[i]);
@@ -88,6 +94,20 @@ class Vector{
             return str;
         }
 
+        class Iterator {
+        private:
+            T* ptr;
+        public:
+            Iterator(T* p) : ptr(p) {}
+            
+            T& operator*() const { return *ptr; }
+            Iterator& operator++() { ++ptr; return *this; }
+            bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
+        };
+        
+        Iterator begin() { return Iterator(arr); }
+        Iterator end()   { return Iterator(arr + size); }
+        
     private:
         T* arr;
         int size;
