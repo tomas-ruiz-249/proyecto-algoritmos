@@ -1,4 +1,6 @@
 #include <string>
+#include "vector.h"
+#include "lista_enlazada.h"
 
 using std::string;
 

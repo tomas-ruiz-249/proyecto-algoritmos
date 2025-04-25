@@ -12,11 +12,17 @@ class Vector{
             capacity = 0;
         }
 
-        int tamaño(){
+        Vector(int capacity){
+            arr = new T[capacity]();
+            this->capacity = capacity;
+            size = 0;
+        }
+
+        int getSize(){
             return size;
         }
 
-        int capacidad(){
+        int getCapacity(){
             return capacity;
         }
 
