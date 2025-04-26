@@ -25,12 +25,12 @@ struct Pair{
         this->empty = false;
     }
     
-    bool operator== (Pair<K,V>& p){
-        return key == p.key and value == p.value;
+    bool operator== (Pair<K,V>& p) const{
+        return key == p.key && value == p.value;
     }
 
     bool operator!= (Pair<K,V>& p){
-        return key != p.key and value != p.value;
+        return key != p.key && value != p.value;
     }
 };
 

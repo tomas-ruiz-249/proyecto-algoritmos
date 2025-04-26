@@ -18,7 +18,7 @@ Vecino::Vecino(NodoDatos nodo, int peso){
 }
 
 bool Vecino::operator!=(const Vecino& v){
-    return nodo != v.nodo and peso != v.peso;
+    return nodo != v.nodo && peso != v.peso;
 }
 string Vecino::to_string() const{
     return "[" + nodo.name + ", " + "dist: " + std::to_string(peso)+ "]";
