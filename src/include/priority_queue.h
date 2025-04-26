@@ -1,3 +1,5 @@
+#include "vector.h"
+
 template<typename T>
 class PriorityQueue{
 public:
@@ -6,5 +8,5 @@ public:
     T dequeue();
     T peek();
 private:
-    T* minHeap;
+    Vector<T> minHeap;
 };

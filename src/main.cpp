@@ -1,12 +1,10 @@
 #include <iostream>
-#include <string>
-#include <tuple>
-#include "grafo.h"
+#include "program.h"
 
 using namespace std;
 
 int main(){
-    Grafo g;
-    g.print();
+    Program p;
+    p.mainLoop();
     return 0;
 }
