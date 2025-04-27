@@ -7,7 +7,6 @@ project(MyProject)
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MT") 
 
 
 # Specify the include directories
@@ -34,10 +33,10 @@ if(WIN32)
     target_link_libraries(MyProject raylib)  # Static library on Windows
     target_link_libraries(MyProject winmm.dll)
     # Alternatively, for dynamic libraries on Windows, link with the .dll
-    # target_link_libraries(MyProject ${RAYLIB_LIB_DIR}/raylib.dll)
 
 elseif(UNIX)
     # Linux: Link with the .so file
-    target_link_libraries(MyProject ${RAYLIB_LIB_DIR}/libraylib.so)  # Static or shared library on Linux
+    # target_link_libraries(MyProject ${RAYLIB_LIB_DIR}/libraylib.so)  # Static or shared library on Linux
+    target_link_libraries(MyProject libraylib.a)
 endif()
 
