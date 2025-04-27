@@ -18,7 +18,7 @@ class Vector{
             size = 0;
         }
 
-        int getSize(){
+        int getSize() {
             return size;
         }
 
@@ -59,10 +59,10 @@ class Vector{
         }
 
         T pop(int indice = -1){
-            if(size < 0){
+            if(size <= 0){
                 throw std::out_of_range("pop() no puede ser llamado en vector vacio.");
             }
-            if (indice = -1){
+            if (indice == -1){
                 indice = size - 1;
             }
             T dato = arr[indice];
@@ -82,7 +82,7 @@ class Vector{
             return arr[index];
         }
         
-        T& operator[](int index){
+        T& operator[](int index) {
             return arr[index];
         }
 
