@@ -1,0 +1,35 @@
+#include "nodo_datos.h"
+
+//nodoDatos
+NodoDatos::NodoDatos(double x, double y, string nombre){
+    this->x = x;
+    this->y = y;
+    this->nombre = nombre;
+}
+
+bool NodoDatos::operator!=(const NodoDatos& n){
+    return nombre != n.nombre;
+}
+
+string NodoDatos::to_string(){
+    return nombre + ", (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+}
+
+//Vecino
+Vecino::Vecino(string nombre, int peso){
+    this->nombre = nombre;
+    this->dist = dist;
+}
+
+bool Vecino::operator!=(const Vecino& v){
+    return nombre != v.nombre && dist != v.dist;
+}
+
+string Vecino::to_string() const{
+    return "[" + nombre + ", " + "dist: " + std::to_string(dist)+ "]";
+}
+
+std::ostream& operator<<(std::ostream& os, const Vecino& v){
+    os << v.to_string();
+    return os;
+}

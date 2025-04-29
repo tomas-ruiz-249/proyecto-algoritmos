@@ -1,3 +1,4 @@
+#pragma once
 #include "nodo_datos.h"
 #include "parser.h"
 
@@ -9,6 +10,6 @@ public:
     void print();
 private:
     HashMap<string, ListaEnlazada<Vecino>> adyacentes;
-    Vector<NodoDatos> nodos;
+    HashMap<string, NodoDatos> nodos;
     Parser parser;
 };

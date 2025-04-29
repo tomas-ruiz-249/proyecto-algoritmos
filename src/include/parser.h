@@ -8,6 +8,7 @@
 class Parser{
 public:
     Parser(string path);
+    Parser() = default;
 private:
     string pathToGraphData;
     HashMap<string, ListaEnlazada<Vecino>> adyacentes;

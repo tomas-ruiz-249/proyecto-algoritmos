@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <type_traits>
@@ -95,7 +96,13 @@ public:
             index = (hashIndex + i * i) % table.getCapacity();
             i++;
         }
-        while(!table[index].empty && table[index].key == key);
+        while(!table[index].empty && table[index].key != key && i < table.getCapacity());
+        if(table[index].empty){
+            table[index].key = key;
+            table[index].value = V();
+            table[index].empty = false;
+        }
+        return table[index].value;
     }
 
     void print(){
