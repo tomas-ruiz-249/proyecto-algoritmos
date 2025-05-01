@@ -67,6 +67,10 @@ public:
         return false;
     }
 
+    int getSize(){
+        return size;
+    }
+
     bool remove(K key){
         int hashIndex = hash(key);
         int index;
@@ -101,6 +105,7 @@ public:
             table[index].key = key;
             table[index].value = V();
             table[index].empty = false;
+            size++;
         }
         return table[index].value;
     }
@@ -136,16 +141,25 @@ public:
     class Iterator {
     private:
         Pair<K,V>* ptr;
+        Pair<K,V>* end;
     public:
-        Iterator(Pair<K,V>* p) : ptr(p) {}
+        Iterator(Pair<K,V>* p, Pair<K,V>*e) : ptr(p), end(e) {}
         
         Pair<K,V>& operator*() const { return *ptr; }
-        Iterator& operator++() { ++ptr; return *this; }
+
+        Iterator& operator++() {
+            ++ptr;
+            while(ptr->empty and ptr != end){
+                ptr++;
+            }
+            return *this; 
+        }
+
         bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
     };
     
-    Iterator begin() { return Iterator(&table[0]); }
-    Iterator end()   { return Iterator(&table[table.getCapacity()]); }
+    Iterator begin() { return Iterator(&table[0], &table[table.getCapacity()]); }
+    Iterator end()   { return Iterator(&table[table.getCapacity()], &table[table.getCapacity()]); }
 private:
     Vector<Pair<K,V>> table;
     double loadFactor;

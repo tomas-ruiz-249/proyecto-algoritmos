@@ -7,15 +7,17 @@ struct NodoDatos{
     double x;
     double y;
     string nombre;
+    bool mouseHover = false;
     NodoDatos() = default;
     NodoDatos(double x, double y, string nombre);
     bool operator!=(const NodoDatos& n);
-    string to_string();
+    friend std::ostream& operator<<(std::ostream& os, const NodoDatos& n);
+    string to_string() const;
 };
 
 struct Vecino{
     string nombre;
-    int dist;
+    double dist;
     Vecino() = default;
     Vecino(string nombre, int peso);
     bool operator!=(const Vecino& v);

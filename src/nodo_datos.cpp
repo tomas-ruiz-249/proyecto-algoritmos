@@ -11,8 +11,13 @@ bool NodoDatos::operator!=(const NodoDatos& n){
     return nombre != n.nombre;
 }
 
-string NodoDatos::to_string(){
+string NodoDatos::to_string() const{
     return nombre + ", (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+}
+
+std::ostream& operator<<(std::ostream& os, const NodoDatos& n){
+    os << n.to_string();
+    return os;
 }
 
 //Vecino

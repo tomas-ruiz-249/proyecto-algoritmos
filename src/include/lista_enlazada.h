@@ -169,6 +169,7 @@ public:
     }
 
     int find(T value, string option){
+        mergeSort(*this, true);
         if(option == "binarySearch"){
             return binarySearch(value);
         }
@@ -277,6 +278,27 @@ public:
         }
         return true;
     }
+
+    class Iterator {
+    private:
+        T* ptr;
+        NodoLista<T>* current;
+    public:
+        Iterator(T* p, NodoLista<T>* n) : ptr(p), current(n) {}
+        
+        T& operator*() const { return *ptr; }
+
+        Iterator& operator++() {
+            current = current->getNext();
+            ptr = current->getDataPtr();
+            return *this; 
+        }
+
+        bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
+    };
+    
+    Iterator begin() { return Iterator(head->getDataPtr(), head); }
+    Iterator end()   { return Iterator(tail->getNext()->getDataPtr(), tail->getNext()); }
 
 private:    
 // ---------------------------------sorting------------------------------
@@ -619,6 +641,7 @@ private:
         }
         return -1;
     }
+
 
     NodoLista<T>* head;
     NodoLista<T>* tail;

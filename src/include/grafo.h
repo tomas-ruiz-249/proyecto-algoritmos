@@ -8,6 +8,10 @@ class Grafo{
 public:
     Grafo();
     void print();
+    void generarDistancias();
+    ListaEnlazada<Vecino> getVecinos(string nodo);
+    NodoDatos getNodo(string nodo);
+    HashMap<string, NodoDatos> getNodos();
 private:
     HashMap<string, ListaEnlazada<Vecino>> adyacentes;
     HashMap<string, NodoDatos> nodos;

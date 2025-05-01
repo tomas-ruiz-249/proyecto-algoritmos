@@ -2,11 +2,11 @@
 
 //Grafo
 Grafo::Grafo(){
-    NodoDatos A(0,0, string("A"));
-    NodoDatos B(0,0, string("B"));
-    NodoDatos C(0,0, string("C"));
-    NodoDatos D(0,0, string("D"));
-    NodoDatos E(0,0, string("E"));
+    NodoDatos A(15, 90, string("A"));
+    NodoDatos B(10, 50, string("B"));
+    NodoDatos C(23, 80, string("C"));
+    NodoDatos D(15, 10, string("D"));
+    NodoDatos E(25, 40, string("E"));
     
     nodos[A.nombre] = A;
     nodos[B.nombre] = B;
@@ -19,7 +19,6 @@ Grafo::Grafo(){
     ListaEnlazada<Vecino> vecinosC;
     ListaEnlazada<Vecino> vecinosD;
     ListaEnlazada<Vecino> vecinosE;
-    ListaEnlazada<Vecino> vecinosF;
 
     vecinosA.append(Vecino(B.nombre, 3));
     vecinosA.append(Vecino(C.nombre, 2));
@@ -43,9 +42,42 @@ Grafo::Grafo(){
     adyacentes[C.nombre] = vecinosC;
     adyacentes[D.nombre] = vecinosD;
     adyacentes[E.nombre] = vecinosE;
+    generarDistancias();
     adyacentes.print();
 }
 
 void Grafo::print(){
     adyacentes.print();
+}
+
+void Grafo::generarDistancias(){
+    double dx;
+    double dy;
+    double distancia;
+    NodoDatos actual;
+    ListaEnlazada<Vecino> vecinos;
+
+    for(auto nodo : adyacentes){
+        actual = nodos[nodo.key];
+        vecinos = nodo.value;
+        for(auto& vecino : vecinos){
+            NodoDatos nodoVecino = nodos[vecino.nombre];
+            dx = actual.x - nodoVecino.x;
+            dy = actual.y - nodoVecino.y;
+            distancia = sqrt(dx*dx + dy*dy);
+            vecino.dist = distancia;
+        }
+    }
+}
+
+ListaEnlazada<Vecino> Grafo::getVecinos(string nodo){
+    return adyacentes[nodo];
+}
+
+NodoDatos Grafo::getNodo(string nodo){
+    return nodos[nodo];
+}
+
+HashMap<string, NodoDatos> Grafo::getNodos(){
+    return nodos;
 }

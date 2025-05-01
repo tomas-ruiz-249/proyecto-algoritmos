@@ -2,11 +2,11 @@
 #include "raylib.h"
 
 Program::Program(){
-    renderer.init();
+    renderer.init(grafo);
 }
 
 void Program::mainLoop(){
     while(!WindowShouldClose()){
-        renderer.renderProcess();
+        renderer.renderProcess(grafo);
     }
 }
