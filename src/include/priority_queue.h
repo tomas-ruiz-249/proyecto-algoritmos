@@ -5,10 +5,6 @@
 template<typename T>
 class PriorityQueue {
 public:
-    PriorityQueue() {
-
-    };
-
     void enqueue(T value) {
         minHeap.push(value);
         heapifyUp(minHeap.getSize() - 1);
@@ -40,7 +36,7 @@ public:
     }
 
     void print() {
-        std::cout << "Heap: [";
+        std::cout << "Priority Queue: [";
         for (size_t i = 0; i < minHeap.getSize(); i++) {
             std::cout << minHeap[i] << " ";
         }

@@ -73,7 +73,7 @@ public:
         cout << "-----------------------------------------\n";
     }
 
-    string to_string(){
+    string to_string() const{
         string str;
         NodoLista<T>* current = head;
         while(current != nullptr){
@@ -277,6 +277,11 @@ public:
             }
         }
         return true;
+    }
+    
+    friend std::ostream& operator<<(std::ostream& os, const ListaEnlazada<T>& l){
+        os << l.to_string();
+        return os;
     }
 
     class Iterator {

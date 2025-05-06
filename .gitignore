@@ -4,3 +4,4 @@ src/html/
 src/latex/
 src/Doxyfile
 .vscode
+CMakePresets.json

@@ -114,7 +114,7 @@ public:
         cout << "---HASHMAP----\n";
         for(int i = 0; i < table.getCapacity(); i++){
             if (!table[i].empty){
-                cout << "map[" << table[i].key << "]: " << table[i].value.to_string() << "\n";
+                cout << "map[" << table[i].key << "]: " << table[i].value << "\n";
             }
         }
         cout << "--------------\n";
