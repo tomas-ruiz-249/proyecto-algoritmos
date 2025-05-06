@@ -1,11 +1,12 @@
 #include "raylib.h"
 #include "renderer.h"
 #include <cmath>
+#include <algorithm>
 
 Renderer::Renderer(){
     windowWidth = 1200;
     windowHeight = 600;
-    radius = windowWidth/30;
+    radius = windowHeight/30;
 
     xOffset = 0;
     yOffset = 0;
@@ -33,14 +34,21 @@ void Renderer::init(Grafo g){
     InitWindow(windowWidth, windowHeight, "Djikstra");
 }
 
-void Renderer::drawNode(NodoDatos nodo){
+void Renderer::drawNode(NodoDatos nodo, bool start, bool end){
     nodeToScreenCoords(nodo);
     Color color;
-    if(nodo.mouseHover){
+    if(start){
         color = GREEN;
+    }
+    else if(end){
+        color = RED;
     }
     else{
         color = BLUE;
+    }
+    if(nodo.mouseHover){
+        auto hsv = ColorToHSV(color);
+        color = ColorFromHSV(hsv.x, hsv.y * 0.5, hsv.z);
     }
     DrawCircle(nodo.x, nodo.y, radius, color);
     DrawText(nodo.nombre.c_str(), nodo.x - radius * 0.5, nodo.y - radius * 0.5, radius, BLACK);
@@ -57,7 +65,7 @@ void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist){
     int xMid = (n1.x + n2.x)/2;
     int yMid = (n1.y + n2.y)/2;
 
-    int font = windowWidth/30;
+    int font = windowHeight/30;
     int fontWidth = font / 2;
     string text = std::to_string(roundDec(dist, 4));
     text.resize(5);
@@ -68,8 +76,10 @@ void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist){
 }
 
 void Renderer::nodeToScreenCoords(NodoDatos& nodo){
-    nodo.x *= windowWidth / xMax;
-    nodo.y *= windowHeight / yMax;
+    int min = std::min(windowWidth, windowHeight);
+    nodo.x *= min / xMax;
+    nodo.x += (windowWidth - min)/2;
+    nodo.y *= min / yMax;
 }
 
 void Renderer::setHover(NodoDatos& n){
@@ -87,20 +97,37 @@ void Renderer::setHover(NodoDatos& n){
     }
 }
 
-void Renderer::drawGraph(Grafo g){
-    for(auto nodo : g.getNodos()){
-        setHover(nodo.value);
-        for(auto vecino : g.getVecinos(nodo.key)){
-            NodoDatos nodoVecino = g.getNodo(vecino.nombre);
-            setHover(nodoVecino);
-            drawEdge(nodo.value, nodoVecino, vecino.dist);
-            drawNode(nodoVecino);
+void setBeginningOrEnd(NodoDatos n, Grafo& g){
+    if(n.mouseHover){
+        if(IsMouseButtonPressed(0)){
+            cout << n.nombre + " is beginning\n";
+            g.start = n.nombre;
         }
-        drawNode(nodo.value);
+        else if(IsMouseButtonPressed(1)){
+            cout << n.nombre + " is end\n";
+            g.end = n.nombre;
+        }
     }
 }
 
-void Renderer::renderProcess(Grafo g){
+void Renderer::drawGraph(Grafo& g){
+    for(auto nodo : g.getNodos()){
+        for(auto vecino : g.getVecinos(nodo.key)){
+            NodoDatos nodoVecino = g.getNodo(vecino.nombre);
+            drawEdge(nodo.value, nodoVecino, vecino.dist);
+        }
+    }
+    for(auto nodo : g.getNodos()){
+        setHover(nodo.value);
+        setBeginningOrEnd(nodo.value, g);
+        bool start = g.start == nodo.value.nombre;
+        bool end = g.end == nodo.value.nombre;
+        drawNode(nodo.value, start, end);
+    }
+}
+
+        
+void Renderer::renderProcess(Grafo& g){
     BeginDrawing();
         ClearBackground(RAYWHITE);
         drawGraph(g);

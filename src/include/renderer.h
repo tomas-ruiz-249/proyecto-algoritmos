@@ -5,10 +5,10 @@ class Renderer{
 public:
     Renderer();
     void init(Grafo g);
-    void renderProcess(Grafo g);
+    void renderProcess(Grafo& g);
 private:
-    void drawGraph(Grafo g);
-    void drawNode(NodoDatos nodo);
+    void drawGraph(Grafo& g);
+    void drawNode(NodoDatos nodo, bool start, bool end);
     void drawEdge(NodoDatos n1, NodoDatos n2, double dist);
     void nodeToScreenCoords(NodoDatos& nodo);
     void setHover(NodoDatos& n);

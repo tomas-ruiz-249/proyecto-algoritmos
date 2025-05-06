@@ -37,6 +37,6 @@ if(WIN32)
 elseif(UNIX)
     # Linux: Link with the .so file
     # target_link_libraries(MyProject ${RAYLIB_LIB_DIR}/libraylib.so)  # Static or shared library on Linux
-    target_link_libraries(MyProject libraylib.a)
+    target_link_libraries(MyProject libray.a)
 endif()
 
