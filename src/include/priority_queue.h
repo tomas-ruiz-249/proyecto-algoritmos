@@ -31,7 +31,7 @@ public:
         return minHeap[0];
     }
 
-    bool isHeapEmpty() {
+    bool isEmpty() {
         return minHeap.getSize() == 0;
     }
 

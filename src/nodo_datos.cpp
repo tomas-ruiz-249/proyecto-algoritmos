@@ -38,3 +38,15 @@ std::ostream& operator<<(std::ostream& os, const Vecino& v){
     os << v.to_string();
     return os;
 }
+
+bool Vecino::operator<(const Vecino& v){
+    return this->dist < v.dist;
+}
+
+bool Vecino::operator>(const Vecino& v){
+    return this->dist > v.dist;
+}
+
+bool Vecino::operator==(const Vecino& v){
+    return this->dist == v.dist;
+}

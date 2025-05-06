@@ -23,4 +23,7 @@ struct Vecino{
     bool operator!=(const Vecino& v);
     string to_string() const;
     friend std::ostream& operator<<(std::ostream& os, const Vecino& v);
+    bool operator<(const Vecino& v);
+    bool operator>(const Vecino& v);
+    bool operator==(const Vecino& v);
 };

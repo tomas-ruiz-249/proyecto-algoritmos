@@ -85,33 +85,33 @@ HashMap<string, NodoDatos> Grafo::getNodos(){
     return nodos;
 }
 
-void Grafo::dijkstra(string A, string B){
-    PriorityQueue<DijkstraEntry> queue;
-    HashMap<string, double> knownDist;
+HashMap<string, DijkstraPath> Grafo::dijkstra(string A, string B){
+    PriorityQueue<Vecino> queue;
+    HashMap<string, DijkstraPath> known;
     for(auto& nodo : nodos){
         string nombre = nodo.key;
         if(nombre == A){
-            knownDist[nombre] = 0;
+            known[nombre] = DijkstraPath(0,"");
         }
         else{
-            knownDist[nombre] = std::numeric_limits<double>::max();
+            known[nombre] = DijkstraPath(std::numeric_limits<double>::max(),"");
         }
     }
-    DijkstraEntry initial(A, knownDist[A], "");
-    queue.enqueue(initial);
+    queue.enqueue(Vecino(A,0));
     queue.print();
-    knownDist.print();
-
-    while(!queue.isHeapEmpty()){
-        DijkstraEntry a = queue.dequeue();
-        for(auto& vecino : adyacentes[a.nombre]){
-            if(knownDist[vecino.nombre] > knownDist[a.nombre] + vecino.dist){
-                knownDist[vecino.nombre] = knownDist[a.nombre] + vecino.dist;
+    known.print();
+    while(!queue.isEmpty()){
+        Vecino a = queue.dequeue();
+        for(auto ady : getVecinos(a.nombre)){
+            double newdist = known[a.nombre].dist + ady.dist;
+            if(known[ady.nombre].dist > newdist){
+                known[ady.nombre].dist = newdist;
+                known[ady.nombre].from = a.nombre;
+                queue.enqueue(Vecino(ady.nombre, known[ady.nombre].dist));
             }
-            DijkstraEntry newEntry(vecino.nombre, knownDist[vecino.nombre], a.nombre);
-            queue.enqueue(newEntry);
         }
         queue.print();
-        knownDist.print();
+        known.print();
     }
+    return known;
 }

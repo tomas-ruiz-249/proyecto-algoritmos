@@ -67,7 +67,7 @@ class Vector{
                 indice = size - 1;
             }
             T dato = arr[indice];
-            for(int i = indice; i < capacity; i++){
+            for(int i = indice; i < capacity-1; i++){
                 arr[i] = arr[i+1];
             }
             size--;
