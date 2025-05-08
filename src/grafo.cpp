@@ -46,7 +46,6 @@ Grafo::Grafo(){
     adyacentes[E.nombre] = vecinosE;
     generarDistancias();
     adyacentes.print();
-    dijkstra(string("A"), string("B"));
 }
 
 void Grafo::print(){
@@ -85,7 +84,8 @@ HashMap<string, NodoDatos> Grafo::getNodos(){
     return nodos;
 }
 
-HashMap<string, DijkstraPath> Grafo::dijkstra(string A, string B){
+HashMap<string, DijkstraPath> Grafo::dijkstra(){
+    string A = start;
     PriorityQueue<Vecino> queue;
     HashMap<string, DijkstraPath> known;
     for(auto& nodo : nodos){
@@ -98,8 +98,6 @@ HashMap<string, DijkstraPath> Grafo::dijkstra(string A, string B){
         }
     }
     queue.enqueue(Vecino(A,0));
-    queue.print();
-    known.print();
     while(!queue.isEmpty()){
         Vecino a = queue.dequeue();
         for(auto ady : getVecinos(a.nombre)){
@@ -110,8 +108,14 @@ HashMap<string, DijkstraPath> Grafo::dijkstra(string A, string B){
                 queue.enqueue(Vecino(ady.nombre, known[ady.nombre].dist));
             }
         }
-        queue.print();
-        known.print();
     }
-    return known;
+    HashMap<string, DijkstraPath> path;
+    DijkstraPath current = known[end];
+    path[end] = current;
+    while(current.from != ""){
+        path[current.from] = known[current.from];
+        current = known[current.from];
+    }
+    path.print();
+    return path;
 }

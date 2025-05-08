@@ -22,6 +22,10 @@ struct DijkstraPath{
         os << "(" << e.dist << ", " << e.from << ")";
         return os;
     }
+
+    bool operator !=(DijkstraPath& d){
+        return this->dist != d.dist && this->from != d.from;
+    }
 };
 
 class Grafo{
@@ -32,7 +36,7 @@ public:
     ListaEnlazada<Vecino> getVecinos(string nodo);
     NodoDatos getNodo(string nodo);
     HashMap<string, NodoDatos> getNodos();
-    HashMap<string, DijkstraPath> dijkstra(string A, string B);
+    HashMap<string, DijkstraPath> dijkstra();
     string start;
     string end;
 private:

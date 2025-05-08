@@ -92,6 +92,10 @@ public:
         return false;
     }
 
+    bool isEmpty(){
+        return size == 0;
+    }
+
     V& operator[](const K& key){
         int hashIndex = hash(key);
         int index;

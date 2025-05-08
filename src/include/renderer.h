@@ -9,7 +9,7 @@ public:
 private:
     void drawGraph(Grafo& g);
     void drawNode(NodoDatos nodo, bool start, bool end);
-    void drawEdge(NodoDatos n1, NodoDatos n2, double dist);
+    void drawEdge(NodoDatos n1, NodoDatos n2, double dist, bool path);
     void nodeToScreenCoords(NodoDatos& nodo);
     void setHover(NodoDatos& n);
     int windowWidth;

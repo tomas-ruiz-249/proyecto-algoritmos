@@ -59,7 +59,11 @@ double roundDec(double num, int places){
     return ceil(num * multiplier) / multiplier;
 }
 
-void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist){
+void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist, bool path){
+    Color color = BLACK;
+    if(path){
+        color = ORANGE;
+    }
     nodeToScreenCoords(n1);
     nodeToScreenCoords(n2);
     int xMid = (n1.x + n2.x)/2;
@@ -71,8 +75,8 @@ void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist){
     text.resize(5);
     int ox = text.length()/2 * fontWidth;
     int oy = font / 2;
-    DrawText(text.c_str(), xMid - ox, yMid - oy, font, BLACK);
-    DrawLine(n1.x, n1.y, n2.x, n2.y, BLACK);
+    DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
+    DrawLine(n1.x, n1.y, n2.x, n2.y, color);
 }
 
 void Renderer::nodeToScreenCoords(NodoDatos& nodo){
@@ -111,10 +115,20 @@ void setBeginningOrEnd(NodoDatos n, Grafo& g){
 }
 
 void Renderer::drawGraph(Grafo& g){
+    HashMap<string, DijkstraPath> path;
+    if(!g.start.empty()){
+        path = g.dijkstra();
+    }
     for(auto nodo : g.getNodos()){
+        string nodoNombre = nodo.value.nombre;
         for(auto vecino : g.getVecinos(nodo.key)){
             NodoDatos nodoVecino = g.getNodo(vecino.nombre);
-            drawEdge(nodo.value, nodoVecino, vecino.dist);
+            if(path[nodoNombre].from == nodoVecino.nombre || path[nodoVecino.nombre].from == nodoNombre){
+                drawEdge(nodo.value, nodoVecino, vecino.dist, true);
+            }
+            else{
+                drawEdge(nodo.value, nodoVecino, vecino.dist, false);
+            }
         }
     }
     for(auto nodo : g.getNodos()){
