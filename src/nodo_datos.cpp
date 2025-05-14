@@ -1,5 +1,5 @@
 #include "nodo_datos.h"
-
+#include <iostream>
 //nodoDatos
 NodoDatos::NodoDatos(double x, double y, string nombre){
     this->x = x;
