@@ -30,8 +30,7 @@ add_executable(MyProject ${SOURCES})
 # Platform-specific settings
 if(WIN32)
     # Windows: Link with the .lib file and ensure dynamic library (.dll) is available
-    target_link_libraries(MyProject raylib)  # Static library on Windows
-    target_link_libraries(MyProject winmm.dll)
+    target_link_libraries(MyProject raylib winmm gdi32)  # Static library on Windows
     # Alternatively, for dynamic libraries on Windows, link with the .dll
 
 elseif(UNIX)
