@@ -4,46 +4,98 @@
 
 //Grafo
 Grafo::Grafo(){
-    NodoDatos A(15, 90, string("A"));
-    NodoDatos B(10, 50, string("B"));
-    NodoDatos C(23, 80, string("C"));
-    NodoDatos D(15, 10, string("D"));
-    NodoDatos E(25, 40, string("E"));
+    NodoDatos A(50,  90, string("A"));  // Punto más alto (12h)
+    NodoDatos B(72,  84, string("B"));  // Cuadrante superior derecho
+    NodoDatos C(86,  67, string("C"));  // Derecha medio-alto
+    NodoDatos D(90,  44, string("D"));  // Punto más a la derecha (3h)
+    NodoDatos E(80,  24, string("E"));  // Cuadrante inferior derecho
+    NodoDatos F(61,  12, string("F"));  // Punto más bajo (6h)
+    NodoDatos G(39,  12, string("G"));  // Punto más bajo (6h) - simétrico
+    NodoDatos H(20,  24, string("H"));  // Cuadrante inferior izquierdo
+    NodoDatos I(10,  44, string("I"));  // Punto más a la izquierda (9h)
+    NodoDatos J(14,  67, string("J"));  // Izquierda medio-alto
+    NodoDatos K(28,  84, string("K"));  // Cuadrante superior izquierdo
     
     nodos[A.nombre] = A;
     nodos[B.nombre] = B;
     nodos[C.nombre] = C;
     nodos[D.nombre] = D;
     nodos[E.nombre] = E;
+    nodos[F.nombre] = F;
+    nodos[G.nombre] = G;
+    nodos[H.nombre] = H;
+    nodos[I.nombre] = I;
+    nodos[J.nombre] = J;
+    nodos[K.nombre] = K;
 
     ListaEnlazada<Vecino> vecinosA;
     ListaEnlazada<Vecino> vecinosB;
     ListaEnlazada<Vecino> vecinosC;
     ListaEnlazada<Vecino> vecinosD;
     ListaEnlazada<Vecino> vecinosE;
+    ListaEnlazada<Vecino> vecinosF;
+    ListaEnlazada<Vecino> vecinosG;
+    ListaEnlazada<Vecino> vecinosH;
+    ListaEnlazada<Vecino> vecinosI;
+    ListaEnlazada<Vecino> vecinosJ;
+    ListaEnlazada<Vecino> vecinosK;
 
-    vecinosA.append(Vecino(B.nombre, 3));
-    vecinosA.append(Vecino(C.nombre, 2));
+    // A
+    vecinosA.append(Vecino(B.nombre, 1));
+    vecinosA.append(Vecino(K.nombre, 1));
 
-    vecinosB.append(Vecino(A.nombre, 3));
-    vecinosB.append(Vecino(D.nombre, 2));
+    // B
+    vecinosB.append(Vecino(A.nombre, 1));
+    vecinosB.append(Vecino(C.nombre, 1));
 
-    vecinosC.append(Vecino(A.nombre, 2));
+    // C
+    vecinosC.append(Vecino(B.nombre, 1));
     vecinosC.append(Vecino(D.nombre, 1));
-    vecinosC.append(Vecino(E.nombre, 4));
 
-    vecinosD.append(Vecino(B.nombre, 2));
+    // D
     vecinosD.append(Vecino(C.nombre, 1));
-    vecinosD.append(Vecino(E.nombre, 2));
+    vecinosD.append(Vecino(E.nombre, 1));
 
-    vecinosE.append(Vecino(D.nombre, 2));
-    vecinosE.append(Vecino(C.nombre, 4));
+    // E
+    vecinosE.append(Vecino(D.nombre, 1));
+    vecinosE.append(Vecino(F.nombre, 1));
+
+    // F
+    vecinosF.append(Vecino(E.nombre, 1));
+    vecinosF.append(Vecino(G.nombre, 1));
+
+    // G
+    vecinosG.append(Vecino(F.nombre, 1));
+    vecinosG.append(Vecino(H.nombre, 1));
+
+    // H
+    vecinosH.append(Vecino(G.nombre, 1));
+    vecinosH.append(Vecino(I.nombre, 1));
+
+    // I
+    vecinosI.append(Vecino(H.nombre, 1));
+    vecinosI.append(Vecino(J.nombre, 1));
+
+    // J
+    vecinosJ.append(Vecino(I.nombre, 1));
+    vecinosJ.append(Vecino(K.nombre, 1));
+
+    // K
+    vecinosK.append(Vecino(J.nombre, 1));
+    vecinosK.append(Vecino(A.nombre, 1));
+
 
     adyacentes[A.nombre] = vecinosA;
     adyacentes[B.nombre] = vecinosB;
     adyacentes[C.nombre] = vecinosC;
     adyacentes[D.nombre] = vecinosD;
     adyacentes[E.nombre] = vecinosE;
+    adyacentes[F.nombre] = vecinosF;
+    adyacentes[G.nombre] = vecinosG;
+    adyacentes[H.nombre] = vecinosH;
+    adyacentes[I.nombre] = vecinosI;
+    adyacentes[J.nombre] = vecinosJ;
+    adyacentes[K.nombre] = vecinosK;
     generarDistancias();
     adyacentes.print();
 }
