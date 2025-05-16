@@ -30,7 +30,7 @@ struct DijkstraPath{
 
 class Grafo{
 public:
-    Grafo();
+    Grafo(const std::string& path);
     void print();
     void generarDistancias();
     ListaEnlazada<Vecino> getVecinos(string nodo);

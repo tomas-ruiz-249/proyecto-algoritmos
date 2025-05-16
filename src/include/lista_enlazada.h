@@ -303,7 +303,7 @@ public:
     };
     
     Iterator begin() { return Iterator(head->getDataPtr(), head); }
-    Iterator end()   { return Iterator(tail->getNext()->getDataPtr(), tail->getNext()); }
+    Iterator end()   { return Iterator(nullptr, nullptr); }
 
 private:    
 // ---------------------------------sorting------------------------------
