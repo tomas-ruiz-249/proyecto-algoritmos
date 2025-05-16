@@ -23,7 +23,12 @@ std::string getWorkingDir() {
 Parser::Parser(const std::string& archivoNombre)
 {
     std::string workingDir = getWorkingDir();
+    #ifdef _MSC_VER
     pathToGraphData = workingDir + "\\..\\..\\assets\\" + archivoNombre;
+    #endif
+    #ifdef __GNUC__
+    pathToGraphData = workingDir + "/../assets/" + archivoNombre;
+    #endif
 }
 
 void Parser::leer() {
