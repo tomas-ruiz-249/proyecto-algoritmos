@@ -71,6 +71,19 @@ public:
         return size;
     }
 
+    bool containsKey(K& key){
+    int hashIndex = hash(key);
+    int index;
+    int i = 0;
+    do{
+        index = (hashIndex + i * i) % table.getCapacity();
+        if (table[index].empty) return false;
+        if (table[index].key == key && !table[index].empty) return true;
+        i++;
+    } while(i < table.getCapacity());
+    return false;
+    }
+
     bool remove(K key){
         int hashIndex = hash(key);
         int index;
