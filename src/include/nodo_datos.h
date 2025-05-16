@@ -61,6 +61,7 @@ struct Vecino{
      * @brief Constructor por defecto.
      */
     Vecino() = default;
+    Vecino(string nombre, double peso);
 
     /**
      * @brief Constructor con nombre y peso.

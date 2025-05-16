@@ -48,10 +48,10 @@ void Renderer::drawNode(NodoDatos nodo, bool start, bool end){
     }
     if(nodo.mouseHover){
         auto hsv = ColorToHSV(color);
-        color = ColorFromHSV(hsv.x, hsv.y * 0.5, hsv.z);
+        color = ColorFromHSV(hsv.x, hsv.y * 0.5f, hsv.z);
     }
-    DrawCircle(nodo.x, nodo.y, radius, color);
-    DrawText(nodo.nombre.c_str(), nodo.x - radius * 0.5, nodo.y - radius * 0.5, radius, BLACK);
+    DrawCircle((int)nodo.x, (int)nodo.y, (float)radius, color);
+    DrawText(nodo.nombre.c_str(), int(nodo.x - radius * 0.5), int( nodo.y - radius * 0.5), radius, BLACK);
 }
 
 double roundDec(double num, int places){
@@ -66,17 +66,17 @@ void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist, bool path){
     }
     nodeToScreenCoords(n1);
     nodeToScreenCoords(n2);
-    int xMid = (n1.x + n2.x)/2;
-    int yMid = (n1.y + n2.y)/2;
+    int xMid = int((n1.x + n2.x)/2);
+    int yMid = int((n1.y + n2.y)/2);
 
     int font = windowHeight/60;
     int fontWidth = font / 2;
     string text = std::to_string(roundDec(dist, 4));
     text.resize(5);
-    int ox = text.length()/2 * fontWidth;
+    int ox = int(text.length()/2 * fontWidth);
     int oy = font / 2;
-    //DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
-    DrawLine(n1.x, n1.y, n2.x, n2.y, color);
+    DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
+    DrawLine((int)n1.x, (int)n1.y, (int)n2.x, (int)n2.y, color);
 }
 
 void Renderer::nodeToScreenCoords(NodoDatos& nodo){
@@ -90,8 +90,8 @@ void Renderer::setHover(NodoDatos& n){
     NodoDatos temp = n;
     nodeToScreenCoords(temp);
     Vector2 pos = GetMousePosition();
-    int dx = pos.x - temp.x;
-    int dy = pos.y - temp.y;
+    int dx = int(pos.x - temp.x);
+    int dy = int(pos.y - temp.y);
     int dist = dx * dx + dy * dy;
     if(dist < radius * radius){
         n.mouseHover = true;

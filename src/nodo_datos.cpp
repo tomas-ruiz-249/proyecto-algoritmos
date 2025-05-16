@@ -25,7 +25,7 @@ std::ostream& operator<<(std::ostream& os, const NodoDatos& n){
 }
 
 //Vecino
-Vecino::Vecino(string nombre, int peso){
+Vecino::Vecino(string nombre, double peso){
     this->nombre = nombre;
     this->dist = dist;
 }
