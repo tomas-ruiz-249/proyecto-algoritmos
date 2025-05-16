@@ -1,9 +1,7 @@
 #include "program.h"
 #include "raylib.h"
 
-Program::Program()
-    : grafo("ruta_al_archivo.txt") 
-{
+Program::Program() : grafo("data.txt") {
     renderer.init(grafo);
 }
 

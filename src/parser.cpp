@@ -23,7 +23,7 @@ std::string getWorkingDir() {
 Parser::Parser(const std::string& archivoNombre)
 {
     std::string workingDir = getWorkingDir();
-    pathToGraphData = workingDir + "\\assets\\" + archivoNombre;
+    pathToGraphData = workingDir + "\\..\\..\\assets\\" + archivoNombre;
 }
 
 void Parser::leer() {
