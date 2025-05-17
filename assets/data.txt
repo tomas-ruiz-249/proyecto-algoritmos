@@ -1,11 +1,262 @@
-NODO,5,5,A
-NODO,1,5,B
-NODO,5,1,C
-NODO,1,1,D
-NODO,6,6,E
+NODO,497,290,Tercer Milenio
+NODO,479,181,Avenida Jiménez
+NODO,468,57,Calle 19
+NODO,297,135,Calle 22
+NODO,151,118,Calle 26
+NODO,290,311,Calle 34
+NODO,189,347,Avenida 39
+NODO,381,287,Calle 45
+NODO,114,156,Calle 57
+NODO,464,46,Calle 63
+NODO,96,256,Marly
+NODO,164,5,Calle 72
+NODO,19,83,Calle 76
+NODO,41,5,Terminal
+NODO,406,97,Calle 187
+NODO,451,343,Portal Norte
+NODO,318,232,Toberín
+NODO,3,447,Calle 161
+NODO,251,353,Calle 146
+NODO,483,18,Mazurén
+NODO,232,93,Calle 142
+NODO,492,17,Calle 127
+NODO,276,481,Alcalá
+NODO,317,315,Prado
+NODO,309,350,Pepe Sierra
+NODO,346,196,Calle 106
+NODO,432,4,Calle 100
+NODO,222,166,Virrey
+NODO,340,402,Calle 85
+NODO,291,196,Héroes
+NODO,82,203,Portal Suba
+NODO,401,178,La Campiña
+NODO,167,84,Av. Suba - Tv. 91
+NODO,15,432,21 Ángeles
+NODO,449,161,Gratamira
+NODO,450,363,Av. Suba - Av. Boyacá
+NODO,428,84,Niza - Calle 127
+NODO,292,17,Humedal Córdoba
+NODO,215,489,Av. Suba - Calle 116
+NODO,288,115,Puentelargo
+NODO,355,336,Suba - Calle 100
+NODO,456,239,Suba - Calle 95
+NODO,450,468,Rionegro
+NODO,113,233,San Martín
+NODO,115,333,Portal 80
+NODO,407,61,Quirigua
+NODO,19,338,Carrera 90
+NODO,445,349,Avenida Cali
+NODO,388,341,Granja - Carrera 77
+NODO,451,382,Boyacá
+NODO,420,216,Ferias
+NODO,80,200,Avenida 68
+NODO,98,157,Carrera 53
+NODO,157,398,Carrera 47
+NODO,58,453,Polo - Fincomercio
+NODO,438,299,Tygua - San José
+NODO,179,280,Guatoque - Veraguas
+NODO,142,199,Ricaurte
+NODO,167,128,Paloquemao
+NODO,154,355,CAD
+NODO,424,65,Avenida El Dorado
+NODO,317,87,Universidad Nacional
+NODO,412,14,El Campín - Universidad Antonio Nariño
+NODO,381,348,Movistar Arena
+NODO,471,235,7 de Agosto
+NODO,272,155,Avenida Chile
+NODO,226,177,Calle 75 - Zona M
+NODO,73,437,La Castellana
+NODO,479,181,Avenida Jiménez
+NODO,115,65,De La Sabana
+NODO,6,155,San Façon - Carrera 22
+NODO,142,199,Ricaurte
+NODO,233,143,CDS - Carrera 32
+NODO,474,70,Zona Industrial
+NODO,31,133,Carrera 43
+NODO,133,31,Puente Aranda
+NODO,233,244,Distrito Grafiti
+NODO,334,319,Pradera
+NODO,466,165,Marsella
+NODO,156,193,Américas - Avenida Boyacá
+NODO,258,30,Mandalay
+NODO,295,289,Banderas
+NODO,428,135,Transversal 86
+NODO,480,262,Biblioteca Tintal
+NODO,293,406,Patio Bonito
+NODO,66,486,Portal Américas
+NODO,116,211,Comuneros
+NODO,364,427,General Santander
+NODO,480,397,Alquería
+NODO,242,479,NQS - Calle 38A Sur
+NODO,96,375,NQS - Calle 30 Sur
+NODO,372,253,SENA
+NODO,163,460,Perdomo
+NODO,332,305,Venecia
+NODO,14,444,Sevillana
+NODO,174,413,Autopista Sur - Calle 57B Sur
+NODO,34,25,Portal del Sur
+NODO,88,248,Hospital
+NODO,85,384,Olaya
+NODO,399,424,Restrepo
+NODO,429,224,Fátima
+NODO,125,59,Hortaliza
+NODO,497,140,Quiroga
+NODO,101,135,Consuelo
+NODO,332,305,Venecia
+NODO,14,444,Sevillana
+NODO,39,114,Molinos
+NODO,87,485,Danubio
+NODO,247,405,Portal Usme
+NODO,399,280,Las Aguas
+NODO,351,80,Museo del Oro
+NODO,479,181,Avenida Jiménez
+NODO,11,388,Universidades
+NODO,151,118,Calle 26
+NODO,239,360,Centro Memoria
+NODO,47,194,Plaza de la Democracia
+NODO,400,157,Ciudad Universitaria
+NODO,147,249,Corferias
+NODO,381,290,Quinta Paredes
+NODO,62,485,Gobernación
+NODO,392,310,CAN
+NODO,360,262,Salitre El Greco
+NODO,437,240,El Tiempo
+NODO,77,174,Avenida Rojas
+NODO,108,209,Normandía
+NODO,286,325,Modelia
+NODO,370,114,Portal Eldorado
+NODO,207,130,San Diego
+NODO,439,342,Bicentenario
+NODO,171,239,San Victorino
+NODO,197,168,Las Nieves
+NODO,317,251,Policarpa
+NODO,115,268,San Bernardo
+NODO,216,335,Avenida 1° de Mayo
+NODO,103,353,Country Sur
+NODO,445,3,Portal 20 de Julio
 
-ENLACE,A,B
-ENLACE,B,C
-ENLACE,C,D
-ENLACE,E,A
-ENLACE,B,D
+ENLACE,Tercer Milenio,Avenida Jiménez
+ENLACE,Avenida Jiménez,Calle 19
+ENLACE,Calle 19,Calle 22
+ENLACE,Calle 22,Calle 26
+ENLACE,Calle 26,Calle 34
+ENLACE,Calle 34,Avenida 39
+ENLACE,Avenida 39,Calle 45
+ENLACE,Calle 45,Calle 57
+ENLACE,Calle 57,Calle 63
+ENLACE,Calle 63,Marly
+ENLACE,Marly,Calle 72
+ENLACE,Calle 72,Calle 76
+ENLACE,Terminal,Calle 187
+ENLACE,Calle 187,Portal Norte
+ENLACE,Portal Norte,Toberín
+ENLACE,Toberín,Calle 161
+ENLACE,Calle 161,Calle 146
+ENLACE,Calle 146,Mazurén
+ENLACE,Mazurén,Calle 142
+ENLACE,Calle 142,Calle 127
+ENLACE,Calle 127,Alcalá
+ENLACE,Alcalá,Prado
+ENLACE,Prado,Pepe Sierra
+ENLACE,Pepe Sierra,Calle 106
+ENLACE,Calle 106,Calle 100
+ENLACE,Calle 100,Virrey
+ENLACE,Virrey,Calle 85
+ENLACE,Calle 85,Héroes
+ENLACE,Portal Suba,La Campiña
+ENLACE,La Campiña,Av. Suba - Tv. 91
+ENLACE,Av. Suba - Tv. 91,21 Ángeles
+ENLACE,21 Ángeles,Gratamira
+ENLACE,Gratamira,Av. Suba - Av. Boyacá
+ENLACE,Av. Suba - Av. Boyacá,Niza - Calle 127
+ENLACE,Niza - Calle 127,Humedal Córdoba
+ENLACE,Humedal Córdoba,Av. Suba - Calle 116
+ENLACE,Av. Suba - Calle 116,Puentelargo
+ENLACE,Puentelargo,Suba - Calle 100
+ENLACE,Suba - Calle 100,Suba - Calle 95
+ENLACE,Suba - Calle 95,Rionegro
+ENLACE,Rionegro,San Martín
+ENLACE,Portal 80,Quirigua
+ENLACE,Quirigua,Carrera 90
+ENLACE,Carrera 90,Avenida Cali
+ENLACE,Avenida Cali,Granja - Carrera 77
+ENLACE,Granja - Carrera 77,Boyacá
+ENLACE,Boyacá,Ferias
+ENLACE,Ferias,Avenida 68
+ENLACE,Avenida 68,Carrera 53
+ENLACE,Carrera 53,Carrera 47
+ENLACE,Carrera 47,Polo - Fincomercio
+ENLACE,Tygua - San José,Guatoque - Veraguas
+ENLACE,Guatoque - Veraguas,Ricaurte
+ENLACE,Ricaurte,Paloquemao
+ENLACE,Paloquemao,CAD
+ENLACE,CAD,Avenida El Dorado
+ENLACE,Avenida El Dorado,Universidad Nacional
+ENLACE,Universidad Nacional,El Campín - Universidad Antonio Nariño
+ENLACE,El Campín - Universidad Antonio Nariño,Movistar Arena
+ENLACE,Movistar Arena,7 de Agosto
+ENLACE,7 de Agosto,Avenida Chile
+ENLACE,Avenida Chile,Calle 75 - Zona M
+ENLACE,Calle 75 - Zona M,La Castellana
+ENLACE,Avenida Jiménez,De La Sabana
+ENLACE,De La Sabana,San Façon - Carrera 22
+ENLACE,San Façon - Carrera 22,Ricaurte
+ENLACE,Ricaurte,CDS - Carrera 32
+ENLACE,CDS - Carrera 32,Zona Industrial
+ENLACE,Zona Industrial,Carrera 43
+ENLACE,Carrera 43,Puente Aranda
+ENLACE,Puente Aranda,Distrito Grafiti
+ENLACE,Distrito Grafiti,Pradera
+ENLACE,Pradera,Marsella
+ENLACE,Marsella,Américas - Avenida Boyacá
+ENLACE,Américas - Avenida Boyacá,Mandalay
+ENLACE,Mandalay,Banderas
+ENLACE,Banderas,Transversal 86
+ENLACE,Transversal 86,Biblioteca Tintal
+ENLACE,Biblioteca Tintal,Patio Bonito
+ENLACE,Patio Bonito,Portal Américas
+ENLACE,Comuneros,General Santander
+ENLACE,General Santander,Alquería
+ENLACE,Alquería,NQS - Calle 38A Sur
+ENLACE,NQS - Calle 38A Sur,NQS - Calle 30 Sur
+ENLACE,NQS - Calle 30 Sur,SENA
+ENLACE,SENA,Perdomo
+ENLACE,Perdomo,Venecia
+ENLACE,Venecia,Sevillana
+ENLACE,Sevillana,Autopista Sur - Calle 57B Sur
+ENLACE,Autopista Sur - Calle 57B Sur,Portal del Sur
+ENLACE,Hospital,Olaya
+ENLACE,Olaya,Restrepo
+ENLACE,Restrepo,Fátima
+ENLACE,Fátima,Hortaliza
+ENLACE,Hortaliza,Quiroga
+ENLACE,Quiroga,Consuelo
+ENLACE,Consuelo,Venecia
+ENLACE,Venecia,Sevillana
+ENLACE,Sevillana,Molinos
+ENLACE,Molinos,Danubio
+ENLACE,Danubio,Portal Usme
+ENLACE,Las Aguas,Museo del Oro
+ENLACE,Museo del Oro,Avenida Jiménez
+ENLACE,Universidades,Calle 26
+ENLACE,Calle 26,Centro Memoria
+ENLACE,Centro Memoria,Plaza de la Democracia
+ENLACE,Plaza de la Democracia,Ciudad Universitaria
+ENLACE,Ciudad Universitaria,Corferias
+ENLACE,Corferias,Quinta Paredes
+ENLACE,Quinta Paredes,Gobernación
+ENLACE,Gobernación,CAN
+ENLACE,CAN,Salitre El Greco
+ENLACE,Salitre El Greco,El Tiempo
+ENLACE,El Tiempo,Avenida Rojas
+ENLACE,Avenida Rojas,Normandía
+ENLACE,Normandía,Modelia
+ENLACE,Modelia,Portal Eldorado
+ENLACE,San Diego,Bicentenario
+ENLACE,Bicentenario,San Victorino
+ENLACE,San Victorino,Las Nieves
+ENLACE,Las Nieves,Policarpa
+ENLACE,Policarpa,San Bernardo
+ENLACE,San Bernardo,Avenida 1° de Mayo
+ENLACE,Avenida 1° de Mayo,Country Sur
+ENLACE,Country Sur,Portal 20 de Julio

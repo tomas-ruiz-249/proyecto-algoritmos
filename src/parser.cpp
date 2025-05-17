@@ -23,6 +23,7 @@ std::string getWorkingDir() {
 Parser::Parser(const std::string& archivoNombre)
 {
     std::string workingDir = getWorkingDir();
+    pathToGraphData = workingDir + "\\assets\\" + archivoNombre;
     #ifdef _MSC_VER
     pathToGraphData = workingDir + "\\..\\..\\assets\\" + archivoNombre;
     #endif
