@@ -51,6 +51,10 @@ struct DijkstraPath{
     bool operator !=(DijkstraPath& d){
         return this->dist != d.dist && this->from != d.from;
     }
+
+    bool operator ==(const DijkstraPath& d) const{
+        return this->dist == d.dist && this->from == d.from;
+    }
 };
 
 /**

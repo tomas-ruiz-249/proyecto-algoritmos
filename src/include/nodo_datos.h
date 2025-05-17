@@ -13,6 +13,7 @@ struct NodoDatos{
     string nombre;   ///< Nombre identificador del nodo.
     bool mouseHover = false; ///< Indica si el mouse está sobre este nodo (usado en la interfaz gráfica).
 
+
     /**
      * @brief Constructor por defecto.
      */
@@ -32,6 +33,7 @@ struct NodoDatos{
      * @return true si los nodos son diferentes.
      */
     bool operator!=(const NodoDatos& n);
+    bool operator==(const NodoDatos& n)const;
 
     /**
      * @brief Operador de impresión en flujo de salida.

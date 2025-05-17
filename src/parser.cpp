@@ -68,6 +68,7 @@ void Parser::leer() {
         }
     }
     file.close();
+    nodos.print();
 
     for (int i = 0; i < enlacesLineas.getSize(); ++i) {
         Vector<string> tokens;

@@ -4,9 +4,9 @@
 #include <algorithm>
 
 Renderer::Renderer(){
-    windowWidth = 1200;
-    windowHeight = 600;
-    radius = windowHeight/30;
+    windowWidth = 1900;
+    windowHeight = 800;
+    radius = windowHeight/80;
 
     xOffset = 0;
     yOffset = 0;
@@ -69,21 +69,21 @@ void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist, bool path){
     int xMid = (n1.x + n2.x)/2;
     int yMid = (n1.y + n2.y)/2;
 
-    int font = windowHeight/30;
+    int font = windowHeight/60;
     int fontWidth = font / 2;
     string text = std::to_string(roundDec(dist, 4));
     text.resize(5);
     int ox = text.length()/2 * fontWidth;
     int oy = font / 2;
-    DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
+    //DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
     DrawLine(n1.x, n1.y, n2.x, n2.y, color);
 }
 
 void Renderer::nodeToScreenCoords(NodoDatos& nodo){
-    int min = std::min(windowWidth, windowHeight);
-    nodo.x *= min / xMax;
-    nodo.x += (windowWidth - min)/2;
-    nodo.y *= min / yMax;
+    //int min = std::min(windowWidth, windowHeight);
+    nodo.x *= windowWidth / (xMax-110);
+    //nodo.x += (windowWidth - min)/2;
+    nodo.y *= windowHeight / yMax;
 }
 
 void Renderer::setHover(NodoDatos& n){

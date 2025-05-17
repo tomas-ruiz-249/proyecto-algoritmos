@@ -173,21 +173,30 @@ public:
      */
     V& operator[](const K& key){
         int hashIndex = hash(key);
-        int index;
+        int index = 0;
         int i = 0;
-        do{
-            index = (hashIndex + i * i) % table.getCapacity();
+        int capacity = table.getCapacity();
+        while (i < capacity) {
+            index = (hashIndex + i * i) % capacity;
+            if (!table[index].empty && table[index].key == key) {
+                return table[index].value;
+            }
+            if (table[index].empty) {
+                break;
+            }
             i++;
         }
-        while(!table[index].empty && table[index].key != key && i < table.getCapacity());
-        if(table[index].empty){
-            table[index].key = key;
-            table[index].value = V();
-            table[index].empty = false;
-            size++;
+        table[index].key = key;
+        table[index].value = V();
+        table[index].empty = false;
+        size++;
+        if(size > table.getCapacity() * loadFactor){
+            expand();
+            return (*this)[key];
         }
         return table[index].value;
     }
+
 
     /**
      * @brief Imprime el contenido del mapa por consola.
