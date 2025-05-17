@@ -3,6 +3,7 @@
 #include "hashmap.h"
 #include "lista_enlazada.h"
 #include "vector.h"
+#include "raylib.h"
 
 #include <fstream>
 #include <sstream>
@@ -16,14 +17,9 @@ using std::string;
 using std::cout;
 using std::endl;
 
-std::string getWorkingDir() {
-    return std::filesystem::current_path().string();
-}
-
 Parser::Parser(const std::string& archivoNombre)
 {
-    std::string workingDir = getWorkingDir();
-    pathToGraphData = workingDir + "\\assets\\" + archivoNombre;
+    std::string workingDir = GetWorkingDirectory();
     #ifdef _MSC_VER
     pathToGraphData = workingDir + "\\..\\..\\assets\\" + archivoNombre;
     #endif
