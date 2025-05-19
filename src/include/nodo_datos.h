@@ -61,14 +61,13 @@ struct Vecino{
      * @brief Constructor por defecto.
      */
     Vecino() = default;
-    Vecino(string nombre, double peso);
 
     /**
      * @brief Constructor con nombre y peso.
      * @param nombre Nombre del nodo vecino.
      * @param peso Peso de la arista (distancia).
      */
-    Vecino(string nombre, int peso);
+    Vecino(string nombre, double peso);
 
     /**
      * @brief Operador de desigualdad.
