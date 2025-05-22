@@ -1,0 +1,5 @@
+<map id="DijkstraPath" name="DijkstraPath">
+<area shape="rect" id="Node000001" title="Estructura que representa la información de un camino en el algoritmo de Dijkstra." alt="" coords="5,93,107,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="27,5,85,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,45,59,93,53,93,53,45"/>
+</map>

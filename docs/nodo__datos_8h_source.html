@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final Algoritmos y Estructuras de Datos 2025-1: Archivo de código fuente nodo_datos.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final Algoritmos y Estructuras de Datos 2025-1
+   </div>
+   <div id="projectbrief">Aplicación del algoritmo de Dijkstra para encontrar el camino mas corto entre estaciones de transmilenio</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">nodo_datos.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>std::string;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structNodoDatos.html">   10</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structNodoDatos.html">NodoDatos</a>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a34f1c3d490e0ed5f49c06ca86c5aec5c">   11</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structNodoDatos.html#a34f1c3d490e0ed5f49c06ca86c5aec5c">x</a>;        </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a742c5b756d1cd5a00c5c2afa4638df21">   12</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structNodoDatos.html#a742c5b756d1cd5a00c5c2afa4638df21">y</a>;        </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a943277dbfc2e3f949e5df11c776ca7c0">   13</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="structNodoDatos.html#a943277dbfc2e3f949e5df11c776ca7c0">nombre</a>;   </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a79f6d289129c2624c45f5391e00a1be5">   14</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structNodoDatos.html#a79f6d289129c2624c45f5391e00a1be5">mouseHover</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structNodoDatos.html#aef866c0c8dabe6fe1e71d54938f35e12">   20</a></span>    <a class="code hl_function" href="structNodoDatos.html#aef866c0c8dabe6fe1e71d54938f35e12">NodoDatos</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a2baba6bacae895e62e877014af00144b">   28</a></span>    <a class="code hl_function" href="structNodoDatos.html#a2baba6bacae895e62e877014af00144b">NodoDatos</a>(<span class="keywordtype">double</span> <a class="code hl_variable" href="structNodoDatos.html#a34f1c3d490e0ed5f49c06ca86c5aec5c">x</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="structNodoDatos.html#a742c5b756d1cd5a00c5c2afa4638df21">y</a>, <span class="keywordtype">string</span> <a class="code hl_variable" href="structNodoDatos.html#a943277dbfc2e3f949e5df11c776ca7c0">nombre</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a05b8b3592543bfa94133a22d0e1f9bcf">   35</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structNodoDatos.html#a05b8b3592543bfa94133a22d0e1f9bcf">operator!=</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structNodoDatos.html">NodoDatos</a>&amp; <a class="code hl_struct" href="structPair.html">n</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_struct" href="structNodoDatos.html">NodoDatos</a>&amp; <a class="code hl_struct" href="structPair.html">n</a>)<span class="keyword">const</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a09d60c2daaa323b90a8b4bfe34b50b75">   44</a></span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="structNodoDatos.html#a09d60c2daaa323b90a8b4bfe34b50b75">operator&lt;&lt;</a>(std::ostream&amp; <a class="code hl_struct" href="structPair.html">os</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structNodoDatos.html">NodoDatos</a>&amp; <a class="code hl_struct" href="structPair.html">n</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structNodoDatos.html#a38d922b8381db8be05d94120741d8564">   50</a></span>    <span class="keywordtype">string</span> <a class="code hl_function" href="structNodoDatos.html#a38d922b8381db8be05d94120741d8564">to_string</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structVecino.html">   56</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structVecino.html">Vecino</a>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structVecino.html#ac39cec2b969859d4c825575691a53b11">   57</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="structVecino.html#ac39cec2b969859d4c825575691a53b11">nombre</a>;   </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structVecino.html#a2c36ce66b6c72c4832ce2a0b65b8d8d7">   58</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structVecino.html#a2c36ce66b6c72c4832ce2a0b65b8d8d7">dist</a>;     </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structVecino.html#a7587f2ca911e1fe45fd02061bcba7927">   63</a></span>    <a class="code hl_function" href="structVecino.html#a7587f2ca911e1fe45fd02061bcba7927">Vecino</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structVecino.html#abca0a108e933041ccdbfb1ca21d46538">   70</a></span>    <a class="code hl_function" href="structVecino.html#abca0a108e933041ccdbfb1ca21d46538">Vecino</a>(<span class="keywordtype">string</span> <a class="code hl_variable" href="structVecino.html#ac39cec2b969859d4c825575691a53b11">nombre</a>, <span class="keywordtype">double</span> <a class="code hl_struct" href="structPair.html">peso</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structVecino.html#a2e3c0627430cd3eca3c9c9fdb330626c">   77</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structVecino.html#a2e3c0627430cd3eca3c9c9fdb330626c">operator!=</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structVecino.html">Vecino</a>&amp; <a class="code hl_struct" href="structPair.html">v</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structVecino.html#ae60e9d6d6cd04e24d1dc390a61231999">   83</a></span>    <span class="keywordtype">string</span> <a class="code hl_function" href="structVecino.html#ae60e9d6d6cd04e24d1dc390a61231999">to_string</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structVecino.html#a50c610eba9aa65f50c7d8286bad54890">   91</a></span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="structVecino.html#a50c610eba9aa65f50c7d8286bad54890">operator&lt;&lt;</a>(std::ostream&amp; <a class="code hl_struct" href="structPair.html">os</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structVecino.html">Vecino</a>&amp; <a class="code hl_struct" href="structPair.html">v</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structVecino.html#aca39cd9056a04a4888f1273b25785b40">   98</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structVecino.html#aca39cd9056a04a4888f1273b25785b40">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structVecino.html">Vecino</a>&amp; <a class="code hl_struct" href="structPair.html">v</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structVecino.html#ad5fcfa763a1223d4784c4f20c30aa2e1">  105</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structVecino.html#ad5fcfa763a1223d4784c4f20c30aa2e1">operator&gt;</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structVecino.html">Vecino</a>&amp; <a class="code hl_struct" href="structPair.html">v</a>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structVecino.html#a33d8190482cb3075b4dd91b1d14188b8">  112</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structVecino.html#a33d8190482cb3075b4dd91b1d14188b8">operator==</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structVecino.html">Vecino</a>&amp; <a class="code hl_struct" href="structPair.html">v</a>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="ttc" id="astructNodoDatos_html"><div class="ttname"><a href="structNodoDatos.html">NodoDatos</a></div><div class="ttdoc">Representa un nodo con posición y nombre.</div><div class="ttdef"><b>Definition</b> nodo_datos.h:10</div></div>
+<div class="ttc" id="astructNodoDatos_html_a05b8b3592543bfa94133a22d0e1f9bcf"><div class="ttname"><a href="structNodoDatos.html#a05b8b3592543bfa94133a22d0e1f9bcf">NodoDatos::operator!=</a></div><div class="ttdeci">bool operator!=(const NodoDatos &amp;n)</div><div class="ttdoc">Operador de desigualdad.</div></div>
+<div class="ttc" id="astructNodoDatos_html_a09d60c2daaa323b90a8b4bfe34b50b75"><div class="ttname"><a href="structNodoDatos.html#a09d60c2daaa323b90a8b4bfe34b50b75">NodoDatos::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const NodoDatos &amp;n)</div><div class="ttdoc">Operador de impresión en flujo de salida.</div></div>
+<div class="ttc" id="astructNodoDatos_html_a2baba6bacae895e62e877014af00144b"><div class="ttname"><a href="structNodoDatos.html#a2baba6bacae895e62e877014af00144b">NodoDatos::NodoDatos</a></div><div class="ttdeci">NodoDatos(double x, double y, string nombre)</div><div class="ttdoc">Constructor con parámetros.</div></div>
+<div class="ttc" id="astructNodoDatos_html_a34f1c3d490e0ed5f49c06ca86c5aec5c"><div class="ttname"><a href="structNodoDatos.html#a34f1c3d490e0ed5f49c06ca86c5aec5c">NodoDatos::x</a></div><div class="ttdeci">double x</div><div class="ttdoc">Coordenada x (puede representar latitud/longitud u otro valor numérico).</div><div class="ttdef"><b>Definition</b> nodo_datos.h:11</div></div>
+<div class="ttc" id="astructNodoDatos_html_a38d922b8381db8be05d94120741d8564"><div class="ttname"><a href="structNodoDatos.html#a38d922b8381db8be05d94120741d8564">NodoDatos::to_string</a></div><div class="ttdeci">string to_string() const</div><div class="ttdoc">Convierte el nodo a string.</div></div>
+<div class="ttc" id="astructNodoDatos_html_a742c5b756d1cd5a00c5c2afa4638df21"><div class="ttname"><a href="structNodoDatos.html#a742c5b756d1cd5a00c5c2afa4638df21">NodoDatos::y</a></div><div class="ttdeci">double y</div><div class="ttdoc">Coordenada y (puede representar latitud/longitud u otro valor numérico).</div><div class="ttdef"><b>Definition</b> nodo_datos.h:12</div></div>
+<div class="ttc" id="astructNodoDatos_html_a79f6d289129c2624c45f5391e00a1be5"><div class="ttname"><a href="structNodoDatos.html#a79f6d289129c2624c45f5391e00a1be5">NodoDatos::mouseHover</a></div><div class="ttdeci">bool mouseHover</div><div class="ttdoc">Indica si el mouse está sobre este nodo (usado en la interfaz gráfica).</div><div class="ttdef"><b>Definition</b> nodo_datos.h:14</div></div>
+<div class="ttc" id="astructNodoDatos_html_a943277dbfc2e3f949e5df11c776ca7c0"><div class="ttname"><a href="structNodoDatos.html#a943277dbfc2e3f949e5df11c776ca7c0">NodoDatos::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre identificador del nodo.</div><div class="ttdef"><b>Definition</b> nodo_datos.h:13</div></div>
+<div class="ttc" id="astructNodoDatos_html_aef866c0c8dabe6fe1e71d54938f35e12"><div class="ttname"><a href="structNodoDatos.html#aef866c0c8dabe6fe1e71d54938f35e12">NodoDatos::NodoDatos</a></div><div class="ttdeci">NodoDatos()=default</div><div class="ttdoc">Constructor por defecto.</div></div>
+<div class="ttc" id="astructPair_html"><div class="ttname"><a href="structPair.html">Pair</a></div><div class="ttdoc">Par clave-valor utilizado en la tabla hash.</div><div class="ttdef"><b>Definition</b> hashmap.h:17</div></div>
+<div class="ttc" id="astructVecino_html"><div class="ttname"><a href="structVecino.html">Vecino</a></div><div class="ttdoc">Representa un vecino de un nodo en el grafo, con nombre y distancia (peso de la arista).</div><div class="ttdef"><b>Definition</b> nodo_datos.h:56</div></div>
+<div class="ttc" id="astructVecino_html_a2c36ce66b6c72c4832ce2a0b65b8d8d7"><div class="ttname"><a href="structVecino.html#a2c36ce66b6c72c4832ce2a0b65b8d8d7">Vecino::dist</a></div><div class="ttdeci">double dist</div><div class="ttdoc">Distancia o peso hacia el vecino.</div><div class="ttdef"><b>Definition</b> nodo_datos.h:58</div></div>
+<div class="ttc" id="astructVecino_html_a2e3c0627430cd3eca3c9c9fdb330626c"><div class="ttname"><a href="structVecino.html#a2e3c0627430cd3eca3c9c9fdb330626c">Vecino::operator!=</a></div><div class="ttdeci">bool operator!=(const Vecino &amp;v)</div><div class="ttdoc">Operador de desigualdad.</div></div>
+<div class="ttc" id="astructVecino_html_a33d8190482cb3075b4dd91b1d14188b8"><div class="ttname"><a href="structVecino.html#a33d8190482cb3075b4dd91b1d14188b8">Vecino::operator==</a></div><div class="ttdeci">bool operator==(const Vecino &amp;v)</div><div class="ttdoc">Operador de igualdad.</div></div>
+<div class="ttc" id="astructVecino_html_a50c610eba9aa65f50c7d8286bad54890"><div class="ttname"><a href="structVecino.html#a50c610eba9aa65f50c7d8286bad54890">Vecino::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Vecino &amp;v)</div><div class="ttdoc">Operador de impresión en flujo de salida.</div></div>
+<div class="ttc" id="astructVecino_html_a7587f2ca911e1fe45fd02061bcba7927"><div class="ttname"><a href="structVecino.html#a7587f2ca911e1fe45fd02061bcba7927">Vecino::Vecino</a></div><div class="ttdeci">Vecino()=default</div><div class="ttdoc">Constructor por defecto.</div></div>
+<div class="ttc" id="astructVecino_html_abca0a108e933041ccdbfb1ca21d46538"><div class="ttname"><a href="structVecino.html#abca0a108e933041ccdbfb1ca21d46538">Vecino::Vecino</a></div><div class="ttdeci">Vecino(string nombre, double peso)</div><div class="ttdoc">Constructor con nombre y peso.</div></div>
+<div class="ttc" id="astructVecino_html_ac39cec2b969859d4c825575691a53b11"><div class="ttname"><a href="structVecino.html#ac39cec2b969859d4c825575691a53b11">Vecino::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre del nodo vecino.</div><div class="ttdef"><b>Definition</b> nodo_datos.h:57</div></div>
+<div class="ttc" id="astructVecino_html_aca39cd9056a04a4888f1273b25785b40"><div class="ttname"><a href="structVecino.html#aca39cd9056a04a4888f1273b25785b40">Vecino::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const Vecino &amp;v)</div><div class="ttdoc">Operador menor que (para comparación de vecinos).</div></div>
+<div class="ttc" id="astructVecino_html_ad5fcfa763a1223d4784c4f20c30aa2e1"><div class="ttname"><a href="structVecino.html#ad5fcfa763a1223d4784c4f20c30aa2e1">Vecino::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(const Vecino &amp;v)</div><div class="ttdoc">Operador mayor que (para comparación de vecinos).</div></div>
+<div class="ttc" id="astructVecino_html_ae60e9d6d6cd04e24d1dc390a61231999"><div class="ttname"><a href="structVecino.html#ae60e9d6d6cd04e24d1dc390a61231999">Vecino::to_string</a></div><div class="ttdeci">string to_string() const</div><div class="ttdoc">Convierte el vecino a string.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

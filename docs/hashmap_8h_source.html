@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final Algoritmos y Estructuras de Datos 2025-1: Archivo de código fuente hashmap.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final Algoritmos y Estructuras de Datos 2025-1
+   </div>
+   <div id="projectbrief">Aplicación del algoritmo de Dijkstra para encontrar el camino mas corto entre estaciones de transmilenio</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hashmap.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;vector.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span>std::cout;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using </span>std::string;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structPair.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPair.html">Pair</a>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structPair.html#a722d0250d144c6a969857b94234ba763">   18</a></span>    K <a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a>;    </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">   19</a></span>    V <a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a>;  </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structPair.html#a99035a755b95bdf066394c0c7e336a64">   20</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structPair.html#a99035a755b95bdf066394c0c7e336a64">empty</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structPair.html#accece8de53ac594928aabc5a889f4124">   25</a></span>    <a class="code hl_function" href="structPair.html#accece8de53ac594928aabc5a889f4124">Pair</a>(){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a> = K();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a> = V();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_variable" href="structPair.html#a99035a755b95bdf066394c0c7e336a64">empty</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structPair.html#af12aa6e8744932019d0e3e54b12791d3">   36</a></span>    <a class="code hl_function" href="structPair.html#af12aa6e8744932019d0e3e54b12791d3">Pair</a>(K <a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a>, V <a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a>){</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        this-&gt;key = <a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        this-&gt;value = <a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        this-&gt;empty = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structPair.html#ab874bf5c28532569870d2c184358c3d9">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structPair.html#ab874bf5c28532569870d2c184358c3d9">operator== </a>(<a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>&amp; p)<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a> == p.<a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a> &amp;&amp; <a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a> == p.<a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structPair.html#a56a3b4853abd379d6c8780666ef1d25f">   56</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structPair.html#a56a3b4853abd379d6c8780666ef1d25f">operator!= </a>(<a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>&amp; p){</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a> != p.<a class="code hl_variable" href="structPair.html#a722d0250d144c6a969857b94234ba763">key</a> || <a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a> != p.<a class="code hl_variable" href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">value</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classHashMap.html">   67</a></span><span class="keyword">class </span><a class="code hl_class" href="classHashMap.html">HashMap</a>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classHashMap.html#a56af6e6e0790c4fe8bd98f355722d09c">   74</a></span>    <a class="code hl_function" href="classHashMap.html#a56af6e6e0790c4fe8bd98f355722d09c">HashMap</a>(<span class="keywordtype">int</span> tableSize = 11, <span class="keywordtype">float</span> loadFactor = 0.75f){</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        table = <a class="code hl_class" href="classVector.html">Vector&lt;Pair&lt;K,V&gt;</a>&gt;(tableSize);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        this-&gt;loadFactor = loadFactor;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        this-&gt;size = 0;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classHashMap.html#a477838cbeaa6e186408fd1feb78288f0">   86</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classHashMap.html#a477838cbeaa6e186408fd1feb78288f0">insert</a>(K key, V value){</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a> p(key, value);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">int</span> hashIndex = <a class="code hl_function" href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">hash</a>(key);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">int</span> index;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">while</span>(i &lt; table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>()){</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            index = (hashIndex + i * i) % table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span>(table[index] == p){</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span>(table[index].empty){</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                table[index] = p;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                size++;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">if</span>(size &gt; table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>() * loadFactor){</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    expand();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            i++;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classHashMap.html#a173d51ca77a2c814b2c0291680e58633">  113</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classHashMap.html#a173d51ca77a2c814b2c0291680e58633">getSize</a>(){</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> size;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classHashMap.html#a89d939e6b37728d8faeb76620b0cc0d5">  122</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classHashMap.html#a89d939e6b37728d8faeb76620b0cc0d5">containsKey</a>(K&amp; key){</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">int</span> hashIndex = <a class="code hl_function" href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">hash</a>(key);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">int</span> index;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">do</span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        index = (hashIndex + i * i) % table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (table[index].empty) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">if</span> (table[index].key == key &amp;&amp; !table[index].empty) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        i++;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    } <span class="keywordflow">while</span>(i &lt; table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>());</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classHashMap.html#ae13586844ab22f967c60019ef588c4e9">  140</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classHashMap.html#ae13586844ab22f967c60019ef588c4e9">remove</a>(K key){</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordtype">int</span> hashIndex = <a class="code hl_function" href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">hash</a>(key);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordtype">int</span> index;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">do</span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            index = (hashIndex + i * i) % table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">if</span>(table[index].empty){</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">if</span>(table[index].key == key){</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                table[index] = <a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                table[<a class="code hl_struct" href="structPair.html">index</a>].empty = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                size--;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <a class="code hl_struct" href="structPair.html">i</a>++;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">while</span>(<a class="code hl_struct" href="structPair.html">i</a> &lt; table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>());</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classHashMap.html#adc6660e06fc662593e11d4f4247a9b04">  165</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classHashMap.html#adc6660e06fc662593e11d4f4247a9b04">isEmpty</a>(){</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> size == 0;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classHashMap.html#afd5c3b03fb06677cf0212be6a9f15c0f">  174</a></span>    <a class="code hl_struct" href="structPair.html">V</a>&amp; <a class="code hl_function" href="classHashMap.html#afd5c3b03fb06677cf0212be6a9f15c0f">operator[]</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPair.html">K</a>&amp; key){</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">hashIndex</a> = <a class="code hl_function" href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">hash</a>(key);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">index</a> = 0;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordtype">int</span> capacity = table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">while</span> (<a class="code hl_struct" href="structPair.html">i</a> &lt; capacity) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <a class="code hl_struct" href="structPair.html">index</a> = (<a class="code hl_struct" href="structPair.html">hashIndex</a> + <a class="code hl_struct" href="structPair.html">i</a> * <a class="code hl_struct" href="structPair.html">i</a>) % capacity;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">if</span> (!table[<a class="code hl_struct" href="structPair.html">index</a>].empty &amp;&amp; table[<a class="code hl_struct" href="structPair.html">index</a>].key == key) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <span class="keywordflow">return</span> table[<a class="code hl_struct" href="structPair.html">index</a>].value;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordflow">if</span> (table[<a class="code hl_struct" href="structPair.html">index</a>].empty) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <a class="code hl_struct" href="structPair.html">i</a>++;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        table[<a class="code hl_struct" href="structPair.html">index</a>].key = key;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        table[<a class="code hl_struct" href="structPair.html">index</a>].value = <a class="code hl_struct" href="structPair.html">V</a>();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        table[<a class="code hl_struct" href="structPair.html">index</a>].empty = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        size++;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">if</span>(size &gt; table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>() * loadFactor){</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            expand();</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[key];</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">return</span> table[<a class="code hl_struct" href="structPair.html">index</a>].value;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classHashMap.html#a4e7727045484e4991dcdebf9d7f7c7a7">  204</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHashMap.html#a4e7727045484e4991dcdebf9d7f7c7a7">print</a>(){</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        cout &lt;&lt; <span class="stringliteral">&quot;---HASHMAP----\n&quot;</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0; <a class="code hl_struct" href="structPair.html">i</a> &lt; table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>(); <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keywordflow">if</span> (!table[<a class="code hl_struct" href="structPair.html">i</a>].empty){</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                cout &lt;&lt; <span class="stringliteral">&quot;map[&quot;</span> &lt;&lt; table[<a class="code hl_struct" href="structPair.html">i</a>].key &lt;&lt; <span class="stringliteral">&quot;]: &quot;</span> &lt;&lt; table[<a class="code hl_struct" href="structPair.html">i</a>].value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        cout &lt;&lt; <span class="stringliteral">&quot;--------------\n&quot;</span>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
+</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="foldopen" id="foldopen00219" data-start="{" data-end="}">
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">  219</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">hash</a>(<a class="code hl_struct" href="structPair.html">K</a> key){</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordtype">string</span> <a class="code hl_struct" href="structPair.html">str</a>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same&lt;K,string&gt;::value){</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <a class="code hl_struct" href="structPair.html">str</a> = key;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_arithmetic&lt;K&gt;::value){</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <a class="code hl_struct" href="structPair.html">str</a> = std::to_string(key);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <a class="code hl_struct" href="structPair.html">str</a> = key.to_string();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">hashVal</a> = 0;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">for</span> (<span class="keywordtype">char</span> <a class="code hl_struct" href="structPair.html">ch</a> : <a class="code hl_struct" href="structPair.html">str</a>) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <a class="code hl_struct" href="structPair.html">hashVal</a> = 37 * <a class="code hl_struct" href="structPair.html">hashVal</a> + <a class="code hl_struct" href="structPair.html">ch</a>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structPair.html">hashVal</a> % table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>();</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="foldopen" id="foldopen00240" data-start="{" data-end="};">
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="classHashMap_1_1Iterator.html">  240</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a> {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>* ptr;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>* end;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="classHashMap_1_1Iterator.html#ab4297c6f7cb12acbd3f8fdb32bd8d4fd">  250</a></span>        <a class="code hl_function" href="classHashMap_1_1Iterator.html#ab4297c6f7cb12acbd3f8fdb32bd8d4fd">Iterator</a>(<a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>* <a class="code hl_struct" href="structPair.html">p</a>, <a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>*<a class="code hl_struct" href="structPair.html">e</a>) : ptr(<a class="code hl_struct" href="structPair.html">p</a>), end(<a class="code hl_struct" href="structPair.html">e</a>) {}</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="classHashMap_1_1Iterator.html#a759c6739a88774d2ae673828ec785435">  256</a></span>        <a class="code hl_struct" href="structPair.html">Pair&lt;K,V&gt;</a>&amp; <a class="code hl_function" href="classHashMap_1_1Iterator.html#a759c6739a88774d2ae673828ec785435">operator*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *ptr; }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="classHashMap_1_1Iterator.html#abb97d98bb95b25ec726ee4816350245e">  262</a></span>        <a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a>&amp; <a class="code hl_function" href="classHashMap_1_1Iterator.html#abb97d98bb95b25ec726ee4816350245e">operator++</a>() {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            ++ptr;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">while</span>(ptr-&gt;<a class="code hl_variable" href="structPair.html#a99035a755b95bdf066394c0c7e336a64">empty</a> <a class="code hl_struct" href="structPair.html">and</a> ptr != end){</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                ptr++;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>; </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        }</div>
+</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="classHashMap_1_1Iterator.html#a4f95783e6cbc2c0dbb6c238520c4ee8d">  275</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classHashMap_1_1Iterator.html#a4f95783e6cbc2c0dbb6c238520c4ee8d">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a>&amp; <a class="code hl_struct" href="structPair.html">other</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ptr != <a class="code hl_struct" href="structPair.html">other</a>.ptr; }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    };</div>
+</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="classHashMap.html#a7d3e546cff305be9ee377dd17c681f35">  281</a></span>    <a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a> <a class="code hl_function" href="classHashMap.html#a7d3e546cff305be9ee377dd17c681f35">begin</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a>(&amp;table[0], &amp;table[table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>()]); }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="classHashMap.html#a39e9e039b2f6d7692f05508914fee9f5">  285</a></span>    <a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a> <a class="code hl_function" href="classHashMap.html#a39e9e039b2f6d7692f05508914fee9f5">end</a>()   { <span class="keywordflow">return</span> <a class="code hl_class" href="classHashMap_1_1Iterator.html">Iterator</a>(&amp;table[table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>()], &amp;table[table.<a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>()]); }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <a class="code hl_struct" href="structPair.html">Vector&lt;Pair&lt;K,V&gt;</a>&gt; table; </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordtype">double</span> loadFactor;       </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordtype">int</span> size;               </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordtype">bool</span> isPrime(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">n</a>){</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">if</span>(<a class="code hl_struct" href="structPair.html">n</a> &lt; 2){</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">if</span>(<a class="code hl_struct" href="structPair.html">n</a> == 2 || <a class="code hl_struct" href="structPair.html">n</a> == 3){</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        }</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structPair.html">n</a> % 2 == 0 || <a class="code hl_struct" href="structPair.html">n</a> % 3 == 0){</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 5; <a class="code hl_struct" href="structPair.html">i</a> * <a class="code hl_struct" href="structPair.html">i</a> &lt;= <a class="code hl_struct" href="structPair.html">n</a>; <a class="code hl_struct" href="structPair.html">i</a> += 6){</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <span class="keywordflow">if</span> (<a class="code hl_struct" href="structPair.html">n</a> % <a class="code hl_struct" href="structPair.html">i</a> == 0 || <a class="code hl_struct" href="structPair.html">n</a> % (<a class="code hl_struct" href="structPair.html">i</a> + 2) == 0){</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    <span class="keywordtype">int</span> nextPrime(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">n</a>){</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">while</span>(!isPrime(<a class="code hl_struct" href="structPair.html">n</a>)){</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            <a class="code hl_struct" href="structPair.html">n</a>++;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structPair.html">n</a>;</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    }</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keywordtype">void</span> expand(){</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <a class="code hl_struct" href="structPair.html">Vector&lt;Pair&lt;K,V&gt;</a>&gt; <a class="code hl_struct" href="structPair.html">oldTable</a> = table;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">newCapacity</a> = nextPrime(2 * table.getCapacity());</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        table = <a class="code hl_struct" href="structPair.html">Vector&lt;Pair&lt;K,V&gt;</a>&gt;(<a class="code hl_struct" href="structPair.html">newCapacity</a>);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        size = 0;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0; <a class="code hl_struct" href="structPair.html">i</a> &lt; <a class="code hl_struct" href="structPair.html">oldTable</a>.getCapacity(); <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            <span class="keywordflow">if</span>(!<a class="code hl_struct" href="structPair.html">oldTable</a>[<a class="code hl_struct" href="structPair.html">i</a>].empty){</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                <a class="code hl_function" href="classHashMap.html#a477838cbeaa6e186408fd1feb78288f0">insert</a>(<a class="code hl_struct" href="structPair.html">oldTable</a>[<a class="code hl_struct" href="structPair.html">i</a>].key, <a class="code hl_struct" href="structPair.html">oldTable</a>[<a class="code hl_struct" href="structPair.html">i</a>].value);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        }</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>};</div>
+</div>
+<div class="ttc" id="aclassHashMap_1_1Iterator_html"><div class="ttname"><a href="classHashMap_1_1Iterator.html">HashMap::Iterator</a></div><div class="ttdoc">Iterador de la tabla hash.</div><div class="ttdef"><b>Definition</b> hashmap.h:240</div></div>
+<div class="ttc" id="aclassHashMap_1_1Iterator_html_a4f95783e6cbc2c0dbb6c238520c4ee8d"><div class="ttname"><a href="classHashMap_1_1Iterator.html#a4f95783e6cbc2c0dbb6c238520c4ee8d">HashMap::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;other) const</div><div class="ttdoc">Operador de desigualdad entre iteradores.</div><div class="ttdef"><b>Definition</b> hashmap.h:275</div></div>
+<div class="ttc" id="aclassHashMap_1_1Iterator_html_a759c6739a88774d2ae673828ec785435"><div class="ttname"><a href="classHashMap_1_1Iterator.html#a759c6739a88774d2ae673828ec785435">HashMap::Iterator::operator*</a></div><div class="ttdeci">Pair&lt; K, V &gt; &amp; operator*() const</div><div class="ttdoc">Operador de acceso al elemento.</div><div class="ttdef"><b>Definition</b> hashmap.h:256</div></div>
+<div class="ttc" id="aclassHashMap_1_1Iterator_html_ab4297c6f7cb12acbd3f8fdb32bd8d4fd"><div class="ttname"><a href="classHashMap_1_1Iterator.html#ab4297c6f7cb12acbd3f8fdb32bd8d4fd">HashMap::Iterator::Iterator</a></div><div class="ttdeci">Iterator(Pair&lt; K, V &gt; *p, Pair&lt; K, V &gt; *e)</div><div class="ttdoc">Constructor del iterador.</div><div class="ttdef"><b>Definition</b> hashmap.h:250</div></div>
+<div class="ttc" id="aclassHashMap_1_1Iterator_html_abb97d98bb95b25ec726ee4816350245e"><div class="ttname"><a href="classHashMap_1_1Iterator.html#abb97d98bb95b25ec726ee4816350245e">HashMap::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdoc">Operador de incremento.</div><div class="ttdef"><b>Definition</b> hashmap.h:262</div></div>
+<div class="ttc" id="aclassHashMap_html"><div class="ttname"><a href="classHashMap.html">HashMap</a></div><div class="ttdoc">Implementación de un HashMap con open addressing y rehashing.</div><div class="ttdef"><b>Definition</b> hashmap.h:67</div></div>
+<div class="ttc" id="aclassHashMap_html_a173d51ca77a2c814b2c0291680e58633"><div class="ttname"><a href="classHashMap.html#a173d51ca77a2c814b2c0291680e58633">HashMap::getSize</a></div><div class="ttdeci">int getSize()</div><div class="ttdoc">Devuelve el número de elementos almacenados.</div><div class="ttdef"><b>Definition</b> hashmap.h:113</div></div>
+<div class="ttc" id="aclassHashMap_html_a39e9e039b2f6d7692f05508914fee9f5"><div class="ttname"><a href="classHashMap.html#a39e9e039b2f6d7692f05508914fee9f5">HashMap::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">Devuelve un iterador al final del mapa.</div><div class="ttdef"><b>Definition</b> hashmap.h:285</div></div>
+<div class="ttc" id="aclassHashMap_html_a477838cbeaa6e186408fd1feb78288f0"><div class="ttname"><a href="classHashMap.html#a477838cbeaa6e186408fd1feb78288f0">HashMap::insert</a></div><div class="ttdeci">bool insert(K key, V value)</div><div class="ttdoc">Inserta un par clave-valor en el mapa.</div><div class="ttdef"><b>Definition</b> hashmap.h:86</div></div>
+<div class="ttc" id="aclassHashMap_html_a4e7727045484e4991dcdebf9d7f7c7a7"><div class="ttname"><a href="classHashMap.html#a4e7727045484e4991dcdebf9d7f7c7a7">HashMap::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Imprime el contenido del mapa por consola.</div><div class="ttdef"><b>Definition</b> hashmap.h:204</div></div>
+<div class="ttc" id="aclassHashMap_html_a56af6e6e0790c4fe8bd98f355722d09c"><div class="ttname"><a href="classHashMap.html#a56af6e6e0790c4fe8bd98f355722d09c">HashMap::HashMap</a></div><div class="ttdeci">HashMap(int tableSize=11, float loadFactor=0.75f)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> hashmap.h:74</div></div>
+<div class="ttc" id="aclassHashMap_html_a71fc68f288477c1995a85d9aff264a7c"><div class="ttname"><a href="classHashMap.html#a71fc68f288477c1995a85d9aff264a7c">HashMap::hash</a></div><div class="ttdeci">int hash(K key)</div><div class="ttdoc">Calcula el hash de una clave.</div><div class="ttdef"><b>Definition</b> hashmap.h:219</div></div>
+<div class="ttc" id="aclassHashMap_html_a7d3e546cff305be9ee377dd17c681f35"><div class="ttname"><a href="classHashMap.html#a7d3e546cff305be9ee377dd17c681f35">HashMap::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">Devuelve un iterador al principio del mapa.</div><div class="ttdef"><b>Definition</b> hashmap.h:281</div></div>
+<div class="ttc" id="aclassHashMap_html_a89d939e6b37728d8faeb76620b0cc0d5"><div class="ttname"><a href="classHashMap.html#a89d939e6b37728d8faeb76620b0cc0d5">HashMap::containsKey</a></div><div class="ttdeci">bool containsKey(K &amp;key)</div><div class="ttdoc">Verifica si una clave está presente en el mapa.</div><div class="ttdef"><b>Definition</b> hashmap.h:122</div></div>
+<div class="ttc" id="aclassHashMap_html_adc6660e06fc662593e11d4f4247a9b04"><div class="ttname"><a href="classHashMap.html#adc6660e06fc662593e11d4f4247a9b04">HashMap::isEmpty</a></div><div class="ttdeci">bool isEmpty()</div><div class="ttdoc">Verifica si el HashMap está vacío.</div><div class="ttdef"><b>Definition</b> hashmap.h:165</div></div>
+<div class="ttc" id="aclassHashMap_html_ae13586844ab22f967c60019ef588c4e9"><div class="ttname"><a href="classHashMap.html#ae13586844ab22f967c60019ef588c4e9">HashMap::remove</a></div><div class="ttdeci">bool remove(K key)</div><div class="ttdoc">Elimina una clave y su valor asociado.</div><div class="ttdef"><b>Definition</b> hashmap.h:140</div></div>
+<div class="ttc" id="aclassHashMap_html_afd5c3b03fb06677cf0212be6a9f15c0f"><div class="ttname"><a href="classHashMap.html#afd5c3b03fb06677cf0212be6a9f15c0f">HashMap::operator[]</a></div><div class="ttdeci">V &amp; operator[](const K &amp;key)</div><div class="ttdoc">Accede al valor asociado a una clave (operador corchete).</div><div class="ttdef"><b>Definition</b> hashmap.h:174</div></div>
+<div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase plantilla que implementa un vector dinámico similar a std::vector.</div><div class="ttdef"><b>Definition</b> vector.h:12</div></div>
+<div class="ttc" id="aclassVector_html_af30f6026b782903f7242ef09b26ddb18"><div class="ttname"><a href="classVector.html#af30f6026b782903f7242ef09b26ddb18">Vector::getCapacity</a></div><div class="ttdeci">int getCapacity()</div><div class="ttdoc">Retorna la capacidad actual del vector.</div><div class="ttdef"><b>Definition</b> vector.h:45</div></div>
+<div class="ttc" id="astructPair_html"><div class="ttname"><a href="structPair.html">Pair</a></div><div class="ttdoc">Par clave-valor utilizado en la tabla hash.</div><div class="ttdef"><b>Definition</b> hashmap.h:17</div></div>
+<div class="ttc" id="astructPair_html_a56a3b4853abd379d6c8780666ef1d25f"><div class="ttname"><a href="structPair.html#a56a3b4853abd379d6c8780666ef1d25f">Pair::operator!=</a></div><div class="ttdeci">bool operator!=(Pair&lt; K, V &gt; &amp;p)</div><div class="ttdoc">Operador de comparación de desigualdad.</div><div class="ttdef"><b>Definition</b> hashmap.h:56</div></div>
+<div class="ttc" id="astructPair_html_a722d0250d144c6a969857b94234ba763"><div class="ttname"><a href="structPair.html#a722d0250d144c6a969857b94234ba763">Pair::key</a></div><div class="ttdeci">K key</div><div class="ttdoc">Clave del par.</div><div class="ttdef"><b>Definition</b> hashmap.h:18</div></div>
+<div class="ttc" id="astructPair_html_a99035a755b95bdf066394c0c7e336a64"><div class="ttname"><a href="structPair.html#a99035a755b95bdf066394c0c7e336a64">Pair::empty</a></div><div class="ttdeci">bool empty</div><div class="ttdoc">Indica si la celda está vacía.</div><div class="ttdef"><b>Definition</b> hashmap.h:20</div></div>
+<div class="ttc" id="astructPair_html_aa9d276b0523ca9cd6de7f8bfba69ebec"><div class="ttname"><a href="structPair.html#aa9d276b0523ca9cd6de7f8bfba69ebec">Pair::value</a></div><div class="ttdeci">V value</div><div class="ttdoc">Valor asociado a la clave.</div><div class="ttdef"><b>Definition</b> hashmap.h:19</div></div>
+<div class="ttc" id="astructPair_html_ab874bf5c28532569870d2c184358c3d9"><div class="ttname"><a href="structPair.html#ab874bf5c28532569870d2c184358c3d9">Pair::operator==</a></div><div class="ttdeci">bool operator==(Pair&lt; K, V &gt; &amp;p) const</div><div class="ttdoc">Operador de comparación de igualdad.</div><div class="ttdef"><b>Definition</b> hashmap.h:47</div></div>
+<div class="ttc" id="astructPair_html_accece8de53ac594928aabc5a889f4124"><div class="ttname"><a href="structPair.html#accece8de53ac594928aabc5a889f4124">Pair::Pair</a></div><div class="ttdeci">Pair()</div><div class="ttdoc">Constructor por defecto. Marca el par como vacío.</div><div class="ttdef"><b>Definition</b> hashmap.h:25</div></div>
+<div class="ttc" id="astructPair_html_af12aa6e8744932019d0e3e54b12791d3"><div class="ttname"><a href="structPair.html#af12aa6e8744932019d0e3e54b12791d3">Pair::Pair</a></div><div class="ttdeci">Pair(K key, V value)</div><div class="ttdoc">Constructor con clave y valor.</div><div class="ttdef"><b>Definition</b> hashmap.h:36</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

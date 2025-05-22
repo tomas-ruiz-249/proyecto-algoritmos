@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final Algoritmos y Estructuras de Datos 2025-1: Archivo de código fuente vector.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final Algoritmos y Estructuras de Datos 2025-1
+   </div>
+   <div id="projectbrief">Aplicación del algoritmo de Dijkstra para encontrar el camino mas corto entre estaciones de transmilenio</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vector.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classVector.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classVector.html">Vector</a>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classVector.html#a39d6069675db4ecfc1ab81d440da759a">   17</a></span>        <a class="code hl_function" href="classVector.html#a39d6069675db4ecfc1ab81d440da759a">Vector</a>(){</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            arr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            size = 0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            capacity = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classVector.html#aa3f9a288472f744bffd6123c1d1d09ed">   27</a></span>        <a class="code hl_function" href="classVector.html#aa3f9a288472f744bffd6123c1d1d09ed">Vector</a>(<span class="keywordtype">int</span> capacity){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            arr = <span class="keyword">new</span> <a class="code hl_struct" href="structPair.html">T</a>[capacity]();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            this-&gt;capacity = capacity;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            size = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classVector.html#a75d02fd7302beff158e7b6b47e24e345">   37</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classVector.html#a75d02fd7302beff158e7b6b47e24e345">getSize</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">return</span> size;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">   45</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classVector.html#af30f6026b782903f7242ef09b26ddb18">getCapacity</a>(){</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">return</span> capacity;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classVector.html#a751ec54c41ece92a001e587ebdee4452">   52</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classVector.html#a751ec54c41ece92a001e587ebdee4452">crecer</a>(){</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <a class="code hl_struct" href="structPair.html">T</a>* <a class="code hl_struct" href="structPair.html">nuevoArr</a> = <span class="keyword">new</span> <a class="code hl_struct" href="structPair.html">T</a>[capacity * 2]();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0; <a class="code hl_struct" href="structPair.html">i</a> &lt; size; <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_struct" href="structPair.html">nuevoArr</a>[<a class="code hl_struct" href="structPair.html">i</a>] = arr[<a class="code hl_struct" href="structPair.html">i</a>];</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">delete</span>[] arr;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            arr = <a class="code hl_struct" href="structPair.html">nuevoArr</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            capacity *= 2;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classVector.html#a8645d182c262885bca3bce931f1487b6">   65</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classVector.html#a8645d182c262885bca3bce931f1487b6">encoger</a>(){</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            capacity = size;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <a class="code hl_struct" href="structPair.html">T</a>* <a class="code hl_struct" href="structPair.html">nuevo_arr</a> = <span class="keyword">new</span> <a class="code hl_struct" href="structPair.html">T</a>[capacity]();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0; <a class="code hl_struct" href="structPair.html">i</a> &lt; capacity; <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <a class="code hl_struct" href="structPair.html">nuevo_arr</a>[<a class="code hl_struct" href="structPair.html">i</a>] = arr[<a class="code hl_struct" href="structPair.html">i</a>];</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keyword">delete</span>[] arr;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            arr = <a class="code hl_struct" href="structPair.html">nuevo_arr</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classVector.html#aa6594ba01987794345069f52ddb058c6">   79</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classVector.html#aa6594ba01987794345069f52ddb058c6">push</a>(<a class="code hl_struct" href="structPair.html">T</a> <a class="code hl_struct" href="structPair.html">dato</a>){</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">if</span> (capacity == 0){</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                arr = <span class="keyword">new</span> <a class="code hl_struct" href="structPair.html">T</a>[1]();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                capacity = 1;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span>(size == capacity){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <a class="code hl_function" href="classVector.html#a751ec54c41ece92a001e587ebdee4452">crecer</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            arr[size] = <a class="code hl_struct" href="structPair.html">dato</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            size++;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classVector.html#a105c6ed58e4ee138f40b6f70112a23d2">   97</a></span>        <a class="code hl_struct" href="structPair.html">T</a> <a class="code hl_function" href="classVector.html#a105c6ed58e4ee138f40b6f70112a23d2">pop</a>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">indice</a> = -1){</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">if</span>(size &lt;= 0){</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;pop() no puede ser llamado en vector vacio.&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">if</span> (<a class="code hl_struct" href="structPair.html">indice</a> == -1){</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <a class="code hl_struct" href="structPair.html">indice</a> = size - 1;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <a class="code hl_struct" href="structPair.html">T</a> <a class="code hl_struct" href="structPair.html">dato</a> = arr[<a class="code hl_struct" href="structPair.html">indice</a>];</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = <a class="code hl_struct" href="structPair.html">indice</a>; <a class="code hl_struct" href="structPair.html">i</a> &lt; capacity-1; <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                arr[<a class="code hl_struct" href="structPair.html">i</a>] = arr[<a class="code hl_struct" href="structPair.html">i</a>+1];</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            size--;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">if</span>(size == capacity/2){</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <a class="code hl_function" href="classVector.html#a8645d182c262885bca3bce931f1487b6">encoger</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">return</span> <a class="code hl_struct" href="structPair.html">dato</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classVector.html#a0a53d8de64ae7cc1e388df4e46ab06bf">  121</a></span>        <a class="code hl_struct" href="structPair.html">T</a>&amp; <a class="code hl_function" href="classVector.html#a0a53d8de64ae7cc1e388df4e46ab06bf">at</a>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">index</a>){</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <span class="keywordflow">if</span>(<a class="code hl_struct" href="structPair.html">index</a> &gt;= size)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Indice fuera del rango.&quot;</span>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">return</span> arr[<a class="code hl_struct" href="structPair.html">index</a>];</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classVector.html#a2054758707c08325ef160fd4dfc48ff7">  132</a></span>        <a class="code hl_struct" href="structPair.html">T</a>&amp; <a class="code hl_function" href="classVector.html#a2054758707c08325ef160fd4dfc48ff7">operator[]</a>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">index</a>) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">return</span> arr[<a class="code hl_struct" href="structPair.html">index</a>];</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classVector.html#adc75a72714d9093f454b8554b71f9a69">  140</a></span>        <span class="keywordtype">string</span> <a class="code hl_function" href="classVector.html#adc75a72714d9093f454b8554b71f9a69">to_string</a>(){</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordtype">string</span> <a class="code hl_struct" href="structPair.html">str</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0; <a class="code hl_struct" href="structPair.html">i</a> &lt; capacity; <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                <a class="code hl_struct" href="structPair.html">str</a> += std::to_string(arr[<a class="code hl_struct" href="structPair.html">i</a>]);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> <a class="code hl_struct" href="structPair.html">str</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classVector.html#a2d58df82894557f529b4d55882ac4ff9">  153</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classVector.html#a2d58df82894557f529b4d55882ac4ff9">contains</a>(<a class="code hl_struct" href="structPair.html">T</a> value){</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_struct" href="structPair.html">i</a> = 0; <a class="code hl_struct" href="structPair.html">i</a> &lt; size; <a class="code hl_struct" href="structPair.html">i</a>++){</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="keywordflow">if</span> (arr[<a class="code hl_struct" href="structPair.html">i</a>] == value){</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="};">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classVector_1_1Iterator.html">  165</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a> {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <a class="code hl_struct" href="structPair.html">T</a>* ptr;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classVector_1_1Iterator.html#af4733f6e376b024932fac7469afd3705">  173</a></span>            <a class="code hl_function" href="classVector_1_1Iterator.html#af4733f6e376b024932fac7469afd3705">Iterator</a>(<a class="code hl_struct" href="structPair.html">T</a>* <a class="code hl_struct" href="structPair.html">p</a>) : ptr(<a class="code hl_struct" href="structPair.html">p</a>) {}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classVector_1_1Iterator.html#a99faba0ccd6c3ba13a1c1f4aa303337d">  179</a></span>            <a class="code hl_struct" href="structPair.html">T</a>&amp; <a class="code hl_function" href="classVector_1_1Iterator.html#a99faba0ccd6c3ba13a1c1f4aa303337d">operator*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *ptr; }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classVector_1_1Iterator.html#a699a90b26ad5ee94c8efaae2183b6bb4">  185</a></span>            <a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a>&amp; <a class="code hl_function" href="classVector_1_1Iterator.html#a699a90b26ad5ee94c8efaae2183b6bb4">operator++</a>() { ++ptr; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classVector_1_1Iterator.html#a17990861ca738dccf51c92b7331b5103">  192</a></span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classVector_1_1Iterator.html#a17990861ca738dccf51c92b7331b5103">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a>&amp; <a class="code hl_struct" href="structPair.html">other</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ptr != <a class="code hl_struct" href="structPair.html">other</a>.ptr; }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        };</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classVector.html#abf6e5c48e68cdd8676d93edf0b3a6b23">  199</a></span>        <a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a> <a class="code hl_function" href="classVector.html#abf6e5c48e68cdd8676d93edf0b3a6b23">begin</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a>(arr); }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="classVector.html#a4ff82de4613402642bea563ae35e4e7e">  205</a></span>        <a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a> <a class="code hl_function" href="classVector.html#a4ff82de4613402642bea563ae35e4e7e">end</a>()   { <span class="keywordflow">return</span> <a class="code hl_class" href="classVector_1_1Iterator.html">Iterator</a>(arr + size); }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <a class="code hl_struct" href="structPair.html">T</a>* arr;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordtype">int</span> size;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordtype">int</span> capacity;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>};</div>
+</div>
+<div class="ttc" id="aclassVector_1_1Iterator_html"><div class="ttname"><a href="classVector_1_1Iterator.html">Vector::Iterator</a></div><div class="ttdoc">Iterador para recorrer el vector.</div><div class="ttdef"><b>Definition</b> vector.h:165</div></div>
+<div class="ttc" id="aclassVector_1_1Iterator_html_a17990861ca738dccf51c92b7331b5103"><div class="ttname"><a href="classVector_1_1Iterator.html#a17990861ca738dccf51c92b7331b5103">Vector::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;other) const</div><div class="ttdoc">Operador de comparación de desigualdad.</div><div class="ttdef"><b>Definition</b> vector.h:192</div></div>
+<div class="ttc" id="aclassVector_1_1Iterator_html_a699a90b26ad5ee94c8efaae2183b6bb4"><div class="ttname"><a href="classVector_1_1Iterator.html#a699a90b26ad5ee94c8efaae2183b6bb4">Vector::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdoc">Operador de incremento.</div><div class="ttdef"><b>Definition</b> vector.h:185</div></div>
+<div class="ttc" id="aclassVector_1_1Iterator_html_a99faba0ccd6c3ba13a1c1f4aa303337d"><div class="ttname"><a href="classVector_1_1Iterator.html#a99faba0ccd6c3ba13a1c1f4aa303337d">Vector::Iterator::operator*</a></div><div class="ttdeci">T &amp; operator*() const</div><div class="ttdoc">Operador de desreferenciación.</div><div class="ttdef"><b>Definition</b> vector.h:179</div></div>
+<div class="ttc" id="aclassVector_1_1Iterator_html_af4733f6e376b024932fac7469afd3705"><div class="ttname"><a href="classVector_1_1Iterator.html#af4733f6e376b024932fac7469afd3705">Vector::Iterator::Iterator</a></div><div class="ttdeci">Iterator(T *p)</div><div class="ttdoc">Constructor del iterador.</div><div class="ttdef"><b>Definition</b> vector.h:173</div></div>
+<div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase plantilla que implementa un vector dinámico similar a std::vector.</div><div class="ttdef"><b>Definition</b> vector.h:12</div></div>
+<div class="ttc" id="aclassVector_html_a0a53d8de64ae7cc1e388df4e46ab06bf"><div class="ttname"><a href="classVector.html#a0a53d8de64ae7cc1e388df4e46ab06bf">Vector::at</a></div><div class="ttdeci">T &amp; at(int index)</div><div class="ttdoc">Retorna una referencia al elemento en la posición indicada.</div><div class="ttdef"><b>Definition</b> vector.h:121</div></div>
+<div class="ttc" id="aclassVector_html_a105c6ed58e4ee138f40b6f70112a23d2"><div class="ttname"><a href="classVector.html#a105c6ed58e4ee138f40b6f70112a23d2">Vector::pop</a></div><div class="ttdeci">T pop(int indice=-1)</div><div class="ttdoc">Elimina y retorna el elemento en la posición indicada o el último si no se especifica.</div><div class="ttdef"><b>Definition</b> vector.h:97</div></div>
+<div class="ttc" id="aclassVector_html_a2054758707c08325ef160fd4dfc48ff7"><div class="ttname"><a href="classVector.html#a2054758707c08325ef160fd4dfc48ff7">Vector::operator[]</a></div><div class="ttdeci">T &amp; operator[](int index)</div><div class="ttdoc">Operador de acceso por índice.</div><div class="ttdef"><b>Definition</b> vector.h:132</div></div>
+<div class="ttc" id="aclassVector_html_a2d58df82894557f529b4d55882ac4ff9"><div class="ttname"><a href="classVector.html#a2d58df82894557f529b4d55882ac4ff9">Vector::contains</a></div><div class="ttdeci">bool contains(T value)</div><div class="ttdoc">Verifica si un elemento existe en el vector.</div><div class="ttdef"><b>Definition</b> vector.h:153</div></div>
+<div class="ttc" id="aclassVector_html_a39d6069675db4ecfc1ab81d440da759a"><div class="ttname"><a href="classVector.html#a39d6069675db4ecfc1ab81d440da759a">Vector::Vector</a></div><div class="ttdeci">Vector()</div><div class="ttdoc">Constructor por defecto. Crea un vector vacío.</div><div class="ttdef"><b>Definition</b> vector.h:17</div></div>
+<div class="ttc" id="aclassVector_html_a4ff82de4613402642bea563ae35e4e7e"><div class="ttname"><a href="classVector.html#a4ff82de4613402642bea563ae35e4e7e">Vector::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">Retorna un iterador al final del vector.</div><div class="ttdef"><b>Definition</b> vector.h:205</div></div>
+<div class="ttc" id="aclassVector_html_a751ec54c41ece92a001e587ebdee4452"><div class="ttname"><a href="classVector.html#a751ec54c41ece92a001e587ebdee4452">Vector::crecer</a></div><div class="ttdeci">void crecer()</div><div class="ttdoc">Duplica la capacidad del vector cuando está lleno.</div><div class="ttdef"><b>Definition</b> vector.h:52</div></div>
+<div class="ttc" id="aclassVector_html_a75d02fd7302beff158e7b6b47e24e345"><div class="ttname"><a href="classVector.html#a75d02fd7302beff158e7b6b47e24e345">Vector::getSize</a></div><div class="ttdeci">int getSize()</div><div class="ttdoc">Retorna el número de elementos actuales en el vector.</div><div class="ttdef"><b>Definition</b> vector.h:37</div></div>
+<div class="ttc" id="aclassVector_html_a8645d182c262885bca3bce931f1487b6"><div class="ttname"><a href="classVector.html#a8645d182c262885bca3bce931f1487b6">Vector::encoger</a></div><div class="ttdeci">void encoger()</div><div class="ttdoc">Reduce la capacidad del vector al tamaño actual.</div><div class="ttdef"><b>Definition</b> vector.h:65</div></div>
+<div class="ttc" id="aclassVector_html_aa3f9a288472f744bffd6123c1d1d09ed"><div class="ttname"><a href="classVector.html#aa3f9a288472f744bffd6123c1d1d09ed">Vector::Vector</a></div><div class="ttdeci">Vector(int capacity)</div><div class="ttdoc">Constructor que inicializa el vector con una capacidad específica.</div><div class="ttdef"><b>Definition</b> vector.h:27</div></div>
+<div class="ttc" id="aclassVector_html_aa6594ba01987794345069f52ddb058c6"><div class="ttname"><a href="classVector.html#aa6594ba01987794345069f52ddb058c6">Vector::push</a></div><div class="ttdeci">void push(T dato)</div><div class="ttdoc">Agrega un elemento al final del vector.</div><div class="ttdef"><b>Definition</b> vector.h:79</div></div>
+<div class="ttc" id="aclassVector_html_abf6e5c48e68cdd8676d93edf0b3a6b23"><div class="ttname"><a href="classVector.html#abf6e5c48e68cdd8676d93edf0b3a6b23">Vector::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">Retorna un iterador al inicio del vector.</div><div class="ttdef"><b>Definition</b> vector.h:199</div></div>
+<div class="ttc" id="aclassVector_html_adc75a72714d9093f454b8554b71f9a69"><div class="ttname"><a href="classVector.html#adc75a72714d9093f454b8554b71f9a69">Vector::to_string</a></div><div class="ttdeci">string to_string()</div><div class="ttdoc">Convierte el contenido del vector a una cadena.</div><div class="ttdef"><b>Definition</b> vector.h:140</div></div>
+<div class="ttc" id="aclassVector_html_af30f6026b782903f7242ef09b26ddb18"><div class="ttname"><a href="classVector.html#af30f6026b782903f7242ef09b26ddb18">Vector::getCapacity</a></div><div class="ttdeci">int getCapacity()</div><div class="ttdoc">Retorna la capacidad actual del vector.</div><div class="ttdef"><b>Definition</b> vector.h:45</div></div>
+<div class="ttc" id="astructPair_html"><div class="ttname"><a href="structPair.html">Pair</a></div><div class="ttdoc">Par clave-valor utilizado en la tabla hash.</div><div class="ttdef"><b>Definition</b> hashmap.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

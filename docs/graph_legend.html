@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Leyenda del gráfico</title>
+<title>Proyecto Final Algoritmos y Estructuras de Datos 2025-1: Leyenda del gráfico</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Proyecto Final Algoritmos y Estructuras de Datos 2025-1
    </div>
+   <div id="projectbrief">Aplicación del algoritmo de Dijkstra para encontrar el camino mas corto entre estaciones de transmilenio</div>
   </td>
  </tr>
  </tbody>
@@ -74,39 +75,41 @@ $(function() {
 <div class="contents">
 <p>Esta página explica cómo interpretar los gráficos generados por doxygen.</p>
 <p>Considérese el siguiente ejemplo: </p><div class="fragment"><div class="line"><span class="comment">/*! Clase invisible por truncamiento */</span></div>
-<div class="line"><span class="keyword">class </span>Invisible { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">Invisible</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Clase truncada, relación de herencia escondida */</span></div>
-<div class="line"><span class="keyword">class </span>Truncated : <span class="keyword">public</span> Invisible { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">Truncated</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structPair.html">Invisible</a> { };</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* Clase no documentada con comentarios de doxygen */</span></div>
-<div class="line"><span class="keyword">class </span>Undocumented { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">Undocumented</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Clase que es heredera usando herencia publica */</span></div>
-<div class="line"><span class="keyword">class </span>PublicBase : <span class="keyword">public</span> Truncated { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">PublicBase</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structPair.html">Truncated</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Plantilla de clases */</span></div>
-<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span>Templ { };</div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code hl_struct" href="structPair.html">Templ</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Clase que es heredera usando herencia protegida  */</span></div>
-<div class="line"><span class="keyword">class </span>ProtectedBase { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">ProtectedBase</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Clase que es heredera usando herencia privada  */</span></div>
-<div class="line"><span class="keyword">class </span>PrivateBase { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">PrivateBase</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Clase que es usada por la clase heredada */</span></div>
-<div class="line"><span class="keyword">class </span>Used { };</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">Used</a> { };</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! Superclase que hereda de varias otras clases */</span></div>
-<div class="line"><span class="keyword">class </span>Inherited : <span class="keyword">public</span> PublicBase,</div>
-<div class="line">                  <span class="keyword">protected</span> ProtectedBase,</div>
-<div class="line">                  <span class="keyword">private</span> PrivateBase,</div>
-<div class="line">                  <span class="keyword">public</span> Undocumented,</div>
-<div class="line">                  <span class="keyword">public</span> Templ&lt;int&gt;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_struct" href="structPair.html">Inherited</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structPair.html">PublicBase</a>,</div>
+<div class="line">                  <span class="keyword">protected</span> <a class="code hl_struct" href="structPair.html">ProtectedBase</a>,</div>
+<div class="line">                  <span class="keyword">private</span> <a class="code hl_struct" href="structPair.html">PrivateBase</a>,</div>
+<div class="line">                  <span class="keyword">public</span> <a class="code hl_struct" href="structPair.html">Undocumented</a>,</div>
+<div class="line">                  <span class="keyword">public</span> <a class="code hl_struct" href="structPair.html">Templ</a>&lt;int&gt;</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    Used *m_usedClass;</div>
+<div class="line">    <a class="code hl_struct" href="structPair.html">Used</a> *<a class="code hl_function" href="structPair.html#accece8de53ac594928aabc5a889f4124">m_usedClass</a>;</div>
 <div class="line">};</div>
+<div class="ttc" id="astructPair_html"><div class="ttname"><a href="structPair.html">Pair</a></div><div class="ttdoc">Par clave-valor utilizado en la tabla hash.</div><div class="ttdef"><b>Definition</b> hashmap.h:17</div></div>
+<div class="ttc" id="astructPair_html_accece8de53ac594928aabc5a889f4124"><div class="ttname"><a href="structPair.html#accece8de53ac594928aabc5a889f4124">Pair::Pair</a></div><div class="ttdeci">Pair()</div><div class="ttdoc">Constructor por defecto. Marca el par como vacío.</div><div class="ttdef"><b>Definition</b> hashmap.h:25</div></div>
 </div><!-- fragment --><p> Dará como resultado el siguiente gráfico:</p>
 <center><img src="graph_legend.png" alt="" class="inline"/></center><p>Las cajas del gráfico superior tienen el siguiente significado: </p>
 <ul>

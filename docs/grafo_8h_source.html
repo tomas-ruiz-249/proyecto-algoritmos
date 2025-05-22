@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final Algoritmos y Estructuras de Datos 2025-1: Archivo de código fuente grafo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final Algoritmos y Estructuras de Datos 2025-1
+   </div>
+   <div id="projectbrief">Aplicación del algoritmo de Dijkstra para encontrar el camino mas corto entre estaciones de transmilenio</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">grafo.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;nodo_datos.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;parser.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>std::string;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structDijkstraPath.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structDijkstraPath.html">DijkstraPath</a>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">   14</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">dist</a>;    </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">   15</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">from</a>;    </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structDijkstraPath.html#af06b542c9fe21884075ae4d9c625d54f">   20</a></span>    <a class="code hl_function" href="structDijkstraPath.html#af06b542c9fe21884075ae4d9c625d54f">DijkstraPath</a>(){</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        this-&gt;dist = -1;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        this-&gt;from = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structDijkstraPath.html#a9fe1e09d2f54be23accb9f364e0bfdf6">   30</a></span>    <a class="code hl_function" href="structDijkstraPath.html#a9fe1e09d2f54be23accb9f364e0bfdf6">DijkstraPath</a>(<span class="keywordtype">double</span> <a class="code hl_variable" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">dist</a>, <span class="keywordtype">string</span> <a class="code hl_variable" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">from</a>){</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        this-&gt;dist = <a class="code hl_variable" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">dist</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        this-&gt;from = <a class="code hl_variable" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">from</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structDijkstraPath.html#a9440a1e17f2abf6f28b5455916bc0145">   41</a></span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="structDijkstraPath.html#a9440a1e17f2abf6f28b5455916bc0145">operator&lt;&lt; </a>(std::ostream&amp; os, <a class="code hl_struct" href="structDijkstraPath.html">DijkstraPath</a>&amp; e){</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; e.<a class="code hl_variable" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">dist</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; e.<a class="code hl_variable" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">from</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> os;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structDijkstraPath.html#ac85f6ba7c2bc94a012ebfecf6fdf93ae">   51</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structDijkstraPath.html#ac85f6ba7c2bc94a012ebfecf6fdf93ae">operator !=</a>(<a class="code hl_struct" href="structDijkstraPath.html">DijkstraPath</a>&amp; d){</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> this-&gt;dist != d.<a class="code hl_variable" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">dist</a> &amp;&amp; this-&gt;from != d.<a class="code hl_variable" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">from</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> <a class="code hl_struct" href="structDijkstraPath.html">DijkstraPath</a>&amp; d)<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> this-&gt;dist == d.<a class="code hl_variable" href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">dist</a> &amp;&amp; this-&gt;from == d.<a class="code hl_variable" href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">from</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classGrafo.html">   67</a></span><span class="keyword">class </span><a class="code hl_class" href="classGrafo.html">Grafo</a>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classGrafo.html#a477156a0728cf9c7fcede16241678d7d">   73</a></span>    <a class="code hl_function" href="classGrafo.html#a477156a0728cf9c7fcede16241678d7d">Grafo</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classGrafo.html#ab810bbe26a98e9af6661ccddff66b03b">   79</a></span>    <a class="code hl_function" href="classGrafo.html#ab810bbe26a98e9af6661ccddff66b03b">Grafo</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classGrafo.html#a68c978cb8c46d23214b5ea349a9ecb7e">   84</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGrafo.html#a68c978cb8c46d23214b5ea349a9ecb7e">print</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classGrafo.html#a6e60c1d017011f95b6e9692597b6ca54">   89</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGrafo.html#a6e60c1d017011f95b6e9692597b6ca54">generarDistancias</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classGrafo.html#a5f9336be8cf1950dd8ff2e64a782d0ca">   96</a></span>    <a class="code hl_class" href="classListaEnlazada.html">ListaEnlazada&lt;Vecino&gt;</a> <a class="code hl_function" href="classGrafo.html#a5f9336be8cf1950dd8ff2e64a782d0ca">getVecinos</a>(<span class="keywordtype">string</span> nodo);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classGrafo.html#a1c2a3077c86bc884371ce2b8ae84162c">  103</a></span>    <a class="code hl_struct" href="structNodoDatos.html">NodoDatos</a> <a class="code hl_function" href="classGrafo.html#a1c2a3077c86bc884371ce2b8ae84162c">getNodo</a>(<span class="keywordtype">string</span> nodo);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classGrafo.html#a8a3997b4972865a3bdc7236e066dcd9c">  109</a></span>    <a class="code hl_class" href="classHashMap.html">HashMap&lt;string, NodoDatos&gt;</a> <a class="code hl_function" href="classGrafo.html#a8a3997b4972865a3bdc7236e066dcd9c">getNodos</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classGrafo.html#a3095895ebeee2e267078ce647be1b72e">  115</a></span>    <a class="code hl_class" href="classHashMap.html">HashMap&lt;string, DijkstraPath&gt;</a> <a class="code hl_function" href="classGrafo.html#a3095895ebeee2e267078ce647be1b72e">dijkstra</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classGrafo.html#adbd303668c9806aee68c7216ec5a060a">  117</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="classGrafo.html#adbd303668c9806aee68c7216ec5a060a">start</a>;   </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classGrafo.html#a210252b0bafa3274e0685906514fa0dd">  118</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="classGrafo.html#a210252b0bafa3274e0685906514fa0dd">end</a>;     </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_class" href="classHashMap.html">HashMap&lt;string, ListaEnlazada&lt;Vecino&gt;</a>&gt; adyacentes;   </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_class" href="classHashMap.html">HashMap&lt;string, NodoDatos&gt;</a> nodos;                    </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_class" href="classParser.html">Parser</a> parser;                                       </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+</div>
+<div class="ttc" id="aclassGrafo_html"><div class="ttname"><a href="classGrafo.html">Grafo</a></div><div class="ttdoc">Clase principal para la representación y manejo de grafos.</div><div class="ttdef"><b>Definition</b> grafo.h:67</div></div>
+<div class="ttc" id="aclassGrafo_html_a1c2a3077c86bc884371ce2b8ae84162c"><div class="ttname"><a href="classGrafo.html#a1c2a3077c86bc884371ce2b8ae84162c">Grafo::getNodo</a></div><div class="ttdeci">NodoDatos getNodo(string nodo)</div><div class="ttdoc">Obtiene la información de un nodo.</div></div>
+<div class="ttc" id="aclassGrafo_html_a210252b0bafa3274e0685906514fa0dd"><div class="ttname"><a href="classGrafo.html#a210252b0bafa3274e0685906514fa0dd">Grafo::end</a></div><div class="ttdeci">string end</div><div class="ttdef"><b>Definition</b> grafo.h:118</div></div>
+<div class="ttc" id="aclassGrafo_html_a3095895ebeee2e267078ce647be1b72e"><div class="ttname"><a href="classGrafo.html#a3095895ebeee2e267078ce647be1b72e">Grafo::dijkstra</a></div><div class="ttdeci">HashMap&lt; string, DijkstraPath &gt; dijkstra()</div><div class="ttdoc">Ejecuta el algoritmo de Dijkstra para hallar caminos mínimos.</div></div>
+<div class="ttc" id="aclassGrafo_html_a477156a0728cf9c7fcede16241678d7d"><div class="ttname"><a href="classGrafo.html#a477156a0728cf9c7fcede16241678d7d">Grafo::Grafo</a></div><div class="ttdeci">Grafo(const std::string &amp;path)</div><div class="ttdoc">Constructor que inicializa el grafo leyendo desde un archivo.</div></div>
+<div class="ttc" id="aclassGrafo_html_a5f9336be8cf1950dd8ff2e64a782d0ca"><div class="ttname"><a href="classGrafo.html#a5f9336be8cf1950dd8ff2e64a782d0ca">Grafo::getVecinos</a></div><div class="ttdeci">ListaEnlazada&lt; Vecino &gt; getVecinos(string nodo)</div><div class="ttdoc">Obtiene la lista de vecinos (adyacentes) de un nodo.</div></div>
+<div class="ttc" id="aclassGrafo_html_a68c978cb8c46d23214b5ea349a9ecb7e"><div class="ttname"><a href="classGrafo.html#a68c978cb8c46d23214b5ea349a9ecb7e">Grafo::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Imprime la información del grafo (nodos y adyacencias).</div></div>
+<div class="ttc" id="aclassGrafo_html_a6e60c1d017011f95b6e9692597b6ca54"><div class="ttname"><a href="classGrafo.html#a6e60c1d017011f95b6e9692597b6ca54">Grafo::generarDistancias</a></div><div class="ttdeci">void generarDistancias()</div><div class="ttdoc">Calcula y asigna las distancias entre los nodos conectados.</div></div>
+<div class="ttc" id="aclassGrafo_html_a8a3997b4972865a3bdc7236e066dcd9c"><div class="ttname"><a href="classGrafo.html#a8a3997b4972865a3bdc7236e066dcd9c">Grafo::getNodos</a></div><div class="ttdeci">HashMap&lt; string, NodoDatos &gt; getNodos()</div><div class="ttdoc">Obtiene todos los nodos del grafo.</div></div>
+<div class="ttc" id="aclassGrafo_html_ab810bbe26a98e9af6661ccddff66b03b"><div class="ttname"><a href="classGrafo.html#ab810bbe26a98e9af6661ccddff66b03b">Grafo::Grafo</a></div><div class="ttdeci">Grafo()</div><div class="ttdoc">Constructor que inicializa el grafo leyendo desde un archivo.</div></div>
+<div class="ttc" id="aclassGrafo_html_adbd303668c9806aee68c7216ec5a060a"><div class="ttname"><a href="classGrafo.html#adbd303668c9806aee68c7216ec5a060a">Grafo::start</a></div><div class="ttdeci">string start</div><div class="ttdef"><b>Definition</b> grafo.h:117</div></div>
+<div class="ttc" id="aclassHashMap_html"><div class="ttname"><a href="classHashMap.html">HashMap</a></div><div class="ttdoc">Implementación de un HashMap con open addressing y rehashing.</div><div class="ttdef"><b>Definition</b> hashmap.h:67</div></div>
+<div class="ttc" id="aclassListaEnlazada_html"><div class="ttname"><a href="classListaEnlazada.html">ListaEnlazada</a></div><div class="ttdoc">Implementación de una lista enlazada simple con utilidades de ordenamiento y búsqueda.</div><div class="ttdef"><b>Definition</b> lista_enlazada.h:81</div></div>
+<div class="ttc" id="aclassParser_html"><div class="ttname"><a href="classParser.html">Parser</a></div><div class="ttdoc">Clase encargada de leer y procesar archivos de datos para construir la estructura de nodos y adyacenc...</div><div class="ttdef"><b>Definition</b> parser.h:15</div></div>
+<div class="ttc" id="astructDijkstraPath_html"><div class="ttname"><a href="structDijkstraPath.html">DijkstraPath</a></div><div class="ttdoc">Estructura que representa la información de un camino en el algoritmo de Dijkstra.</div><div class="ttdef"><b>Definition</b> grafo.h:13</div></div>
+<div class="ttc" id="astructDijkstraPath_html_a1505cce1bfbf268ff147486257f9fa96"><div class="ttname"><a href="structDijkstraPath.html#a1505cce1bfbf268ff147486257f9fa96">DijkstraPath::from</a></div><div class="ttdeci">string from</div><div class="ttdef"><b>Definition</b> grafo.h:15</div></div>
+<div class="ttc" id="astructDijkstraPath_html_a1f8d28e7a05cd588f9c0774d7c4c0617"><div class="ttname"><a href="structDijkstraPath.html#a1f8d28e7a05cd588f9c0774d7c4c0617">DijkstraPath::dist</a></div><div class="ttdeci">double dist</div><div class="ttdef"><b>Definition</b> grafo.h:14</div></div>
+<div class="ttc" id="astructDijkstraPath_html_a9440a1e17f2abf6f28b5455916bc0145"><div class="ttname"><a href="structDijkstraPath.html#a9440a1e17f2abf6f28b5455916bc0145">DijkstraPath::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, DijkstraPath &amp;e)</div><div class="ttdoc">Operador para impresión de la estructura DijkstraPath.</div><div class="ttdef"><b>Definition</b> grafo.h:41</div></div>
+<div class="ttc" id="astructDijkstraPath_html_a9fe1e09d2f54be23accb9f364e0bfdf6"><div class="ttname"><a href="structDijkstraPath.html#a9fe1e09d2f54be23accb9f364e0bfdf6">DijkstraPath::DijkstraPath</a></div><div class="ttdeci">DijkstraPath(double dist, string from)</div><div class="ttdoc">Constructor que inicializa los valores de distancia y nodo previo.</div><div class="ttdef"><b>Definition</b> grafo.h:30</div></div>
+<div class="ttc" id="astructDijkstraPath_html_ac85f6ba7c2bc94a012ebfecf6fdf93ae"><div class="ttname"><a href="structDijkstraPath.html#ac85f6ba7c2bc94a012ebfecf6fdf93ae">DijkstraPath::operator!=</a></div><div class="ttdeci">bool operator!=(DijkstraPath &amp;d)</div><div class="ttdoc">Operador de desigualdad para comparar dos caminos.</div><div class="ttdef"><b>Definition</b> grafo.h:51</div></div>
+<div class="ttc" id="astructDijkstraPath_html_af06b542c9fe21884075ae4d9c625d54f"><div class="ttname"><a href="structDijkstraPath.html#af06b542c9fe21884075ae4d9c625d54f">DijkstraPath::DijkstraPath</a></div><div class="ttdeci">DijkstraPath()</div><div class="ttdoc">Constructor por defecto. Inicializa dist en -1 y from como cadena vacía.</div><div class="ttdef"><b>Definition</b> grafo.h:20</div></div>
+<div class="ttc" id="astructNodoDatos_html"><div class="ttname"><a href="structNodoDatos.html">NodoDatos</a></div><div class="ttdoc">Representa un nodo con posición y nombre.</div><div class="ttdef"><b>Definition</b> nodo_datos.h:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
