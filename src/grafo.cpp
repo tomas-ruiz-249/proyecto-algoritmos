@@ -13,6 +13,15 @@ Grafo::Grafo(const std::string& path) : parser(path) {
     generarDistancias();
 }
 
+Grafo::Grafo() : parser("data.txt") {
+    parser.leer();
+    nodos = parser.getNodos();
+    adyacentes = parser.getAdyacentes();
+    nodos.print();
+    adyacentes.print();
+    generarDistancias();
+}
+
 void Grafo::print() {
     adyacentes.print();
 }

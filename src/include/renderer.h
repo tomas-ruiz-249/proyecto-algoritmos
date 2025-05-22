@@ -92,4 +92,9 @@ private:
      * @brief Radio utilizado para el dibujo de los nodos.
      */
     int radius;
+
+    /**
+     * @brief Opcion para mostrar los costos de cada arista entre nodos.
+     */
+    bool mostrarCostos;
 };

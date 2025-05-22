@@ -4,14 +4,18 @@
 #include <algorithm>
 
 Renderer::Renderer(){
-    windowWidth = 1900;
-    windowHeight = 800;
+    InitWindow(0,0,"");
+    windowWidth = GetScreenWidth() * .9;
+    windowHeight = GetScreenHeight() * .9;
+    CloseWindow();
+    InitWindow(windowWidth, windowHeight, "Algoritmo de Dijkstra para Transmilenio");
     radius = windowHeight/80;
 
     xOffset = 0;
     yOffset = 0;
     xMax = -1;
     yMax = -1;
+    mostrarCostos = false;
 }
 
 void Renderer::init(Grafo g){
@@ -31,10 +35,17 @@ void Renderer::init(Grafo g){
     yOffset /= numNodos;
     xMax += xOffset;
     yMax += yOffset;
-    InitWindow(windowWidth, windowHeight, "Djikstra");
 }
 
 void Renderer::drawNode(NodoDatos nodo, bool start, bool end){
+    int inclinacion = 0;
+    int offset = 0;
+    if(nodo.y == 30 || nodo.y == 70 || nodo.x > 220 || nodo.y < 30){
+        inclinacion = 45;
+        if(nodo.y == 70 && nodo.x < 147){
+            offset = windowHeight * 0.1;
+        }
+    }
     nodeToScreenCoords(nodo);
     Color color;
     if(start){
@@ -51,7 +62,17 @@ void Renderer::drawNode(NodoDatos nodo, bool start, bool end){
         color = ColorFromHSV(hsv.x, hsv.y * 0.5f, hsv.z);
     }
     DrawCircle((int)nodo.x, (int)nodo.y, (float)radius, color);
-    DrawText(nodo.nombre.c_str(), int(nodo.x - radius * 0.5), int( nodo.y - radius * 0.5), radius, BLACK);
+    // DrawText(nodo.nombre.c_str(), int(nodo.x - radius * 0.5), int( nodo.y - radius * 0.5), radius, BLACK);
+    DrawTextPro(
+                GetFontDefault(),
+                nodo.nombre.c_str(),
+                Vector2(int(nodo.x - radius * 0.5), int( nodo.y - radius * 0.5)),
+                Vector2(offset,0),
+                inclinacion,
+                radius * 1.5,
+                radius * 0.1,
+                BLACK
+            );
 }
 
 double roundDec(double num, int places){
@@ -75,15 +96,27 @@ void Renderer::drawEdge(NodoDatos n1, NodoDatos n2, double dist, bool path){
     text.resize(5);
     int ox = int(text.length()/2 * fontWidth);
     int oy = font / 2;
-    DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
+    // DrawText(text.c_str(), xMid - ox, yMid - oy, font, color);
+    if(mostrarCostos){
+        DrawTextPro(
+                    GetFontDefault(),
+                    text.c_str(),
+                    Vector2(xMid - ox, yMid - oy),
+                    Vector2(windowHeight*0.05, 0),
+                    45,
+                    font,
+                    font * 0.1,
+                    color
+                );
+    }
     DrawLine((int)n1.x, (int)n1.y, (int)n2.x, (int)n2.y, color);
 }
 
 void Renderer::nodeToScreenCoords(NodoDatos& nodo){
-    //int min = std::min(windowWidth, windowHeight);
-    nodo.x *= windowWidth / (xMax-110);
-    //nodo.x += (windowWidth - min)/2;
-    nodo.y *= windowHeight / yMax;
+    // int min = std::min(windowWidth, windowHeight);
+    // nodo.x += (windowWidth - min)/2;
+    nodo.x *= windowWidth / (xMax-115);
+    nodo.y *= windowHeight / (yMax-50);
 }
 
 void Renderer::setHover(NodoDatos& n){
@@ -115,10 +148,37 @@ void setBeginningOrEnd(NodoDatos n, Grafo& g){
 }
 
 void Renderer::drawGraph(Grafo& g){
-    HashMap<string, DijkstraPath> path;
-    if(!g.start.empty()){
-        path = g.dijkstra();
+    if(IsKeyPressed(KEY_W)){
+        mostrarCostos = !mostrarCostos;
     }
+    HashMap<string, DijkstraPath> path;
+    int costoTotal = 0;
+    if(!g.start.empty() && !g.end.empty()){
+        path = g.dijkstra();
+        costoTotal = path[g.end].dist;
+    }
+    int fontSize = windowHeight * 0.03;
+    DrawText(
+            (string("Inicio: ") + g.start).c_str(),
+            windowWidth * 0.01,
+            windowHeight * 0.8,
+            fontSize,
+            BLACK
+    );
+    DrawText(
+            (string("Fin: ") + g.end).c_str(),
+            windowWidth * 0.01,
+            windowHeight * 0.8 + fontSize * 2,
+            fontSize,
+            BLACK
+    );
+    DrawText(
+            (string("Costo total: ") + std::to_string(costoTotal)).c_str(),
+            windowWidth * 0.01,
+            windowHeight * 0.8 + fontSize * 4,
+            fontSize,
+            BLACK
+    );
     for(auto nodo : g.getNodos()){
         string nodoNombre = nodo.value.nombre;
         for(auto vecino : g.getVecinos(nodo.key)){
@@ -132,6 +192,9 @@ void Renderer::drawGraph(Grafo& g){
         }
     }
     for(auto nodo : g.getNodos()){
+        if(nodo.key == ""){
+            continue;
+        }
         setHover(nodo.value);
         setBeginningOrEnd(nodo.value, g);
         bool start = g.start == nodo.value.nombre;

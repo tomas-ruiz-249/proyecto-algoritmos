@@ -73,6 +73,12 @@ public:
     Grafo(const std::string& path);
 
     /**
+     * @brief Constructor que inicializa el grafo leyendo desde un archivo.
+     * @param path Ruta del archivo de datos del grafo.
+     */
+    Grafo();
+
+    /**
      * @brief Imprime la información del grafo (nodos y adyacencias).
      */
     void print();
